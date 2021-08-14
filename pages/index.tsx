@@ -1,8 +1,16 @@
 import type { NextPage } from 'next'
 import { Typewriter } from 'react-simple-typewriter'
+import { useRef } from 'react'
 import Head from 'next/head'
 
 const Home: NextPage = () => {
+  const aboutMeRef = useRef<null|HTMLDivElement>(null)
+  const experienceRef = useRef<null|HTMLDivElement>(null)
+  const educationRef = useRef<null|HTMLDivElement>(null)
+  const skillsRef = useRef<null|HTMLDivElement>(null)
+  const projectRef = useRef<null|HTMLDivElement>(null)
+  const contactMeRef = useRef<null|HTMLDivElement>(null)
+
   return (
     <div className="disable-scroll overflow-y-scroll snap snap-y snap-mandatory h-screen max-h-[-webkit-fill-available]">
       <div className="relative font-sans snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available] flex flex-col items-center justify-center">
@@ -17,10 +25,10 @@ const Home: NextPage = () => {
             deleteSpeed={50}
             delaySpeed={1000}
           /></span></h2>
-       <p className="absolute bottom-4 sm:bottom-12 animate-bounce text-2xl sm:text-3xl">↓</p>
+       <p className="absolute bottom-4 sm:bottom-12 animate-bounce text-2xl sm:text-3xl cursor-pointer" onClick={() => aboutMeRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
       </div>
 
-      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available] bg-black">
+      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available] bg-black" ref={aboutMeRef}>
         <div className="w-[calc(100vw-3rem)] lg:w-[calc(100vw-10rem)] flex flex-col lg:flex-row items-center place-content-between">
           <h3 className="mb-8 lg:mb-0 text-4xl lg:text-8xl font-bold text-white">Who am I?</h3>
           <div className="w-[calc(100vw-3rem)] lg:w-1/2 flex flex-col items-center">
@@ -43,10 +51,10 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <p className="absolute bottom-4 md:bottom-12 animate-bounce text-2xl md:text-3xl text-white">↓</p>
+        <p className="absolute bottom-4 md:bottom-12 animate-bounce text-2xl md:text-3xl text-white cursor-pointer" onClick={() => experienceRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
       </div>
 
-      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]">
+      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={experienceRef}>
         <div className="w-[calc(100vw-3rem)] lg:w-[calc(100vw-10rem)] flex flex-col-reverse lg:flex-row items-center place-content-between">
           <div className="lg:w-[45%] flex flex-col max-h-[30rem] lg:max-h-[36rem] overflow-y-scroll">
             <div>
@@ -88,10 +96,10 @@ const Home: NextPage = () => {
           </div>
           <h3 className="text-4xl lg:text-8xl mb-8 md:mb-12 lg:mb-0 text-right font-bold">Experience</h3>
         </div>
-        <p className="absolute bottom-4 lg:bottom-12 animate-bounce text-2xl lg:text-3xl">↓</p>
+        <p className="absolute bottom-4 lg:bottom-12 animate-bounce text-2xl lg:text-3xl cursor-pointer" onClick={() => educationRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
       </div>
 
-      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]">
+      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={educationRef}>
         <div className="w-[calc(100vw-3rem)] lg:w-[calc(100vw-10rem)] flex flex-col lg:flex-row items-center place-content-between">
           <h3 className="text-4xl lg:text-8xl mb-8 md:mb-12 lg:mb-0 text-left font-bold">Education</h3>
           <div className="lg:w-[45%] flex flex-col">
@@ -106,10 +114,10 @@ const Home: NextPage = () => {
             <h5 className="text-md italic">High School Diploma, Natural Sciences &nbsp;&bull;&nbsp; 2017 - 2020</h5>
           </div>
         </div>
-        <p className="absolute bottom-4 lg:bottom-12 animate-bounce text-2xl lg:text-3xl">↓</p>
+        <p className="absolute bottom-4 lg:bottom-12 animate-bounce text-2xl lg:text-3xl cursor-pointer" onClick={() => skillsRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]">
+      <div className="relative flex flex-col items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={skillsRef}>
         <div className="w-[calc(100vw-10rem)] flex flex-col items-center">
           <h3 className="text-3xl text-left font-bold mb-8 lg:mb-7">Skills</h3>
           <div className="hidden lg:flex lg:flex-col lg:items-center">
@@ -141,18 +149,18 @@ const Home: NextPage = () => {
             </ul>
           </div>
         </div>
-        <p className="absolute bottom-4 lg:bottom-12 animate-bounce text-2xl lg:text-3xl">↓</p>
+        <p className="absolute bottom-4 lg:bottom-12 animate-bounce text-2xl lg:text-3xl cursor-pointer" onClick={() => projectRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]">
+      <div className="relative flex flex-col items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={projectRef}>
         <div className="w-[calc(100vw-10rem)] flex flex-col items-center">
           <h3 className="text-3xl text-left font-bold mb-7">Projects</h3>
           <p className="italic">Coming Soon</p>
         </div>
-        <p className="absolute bottom-4 sm:bottom-12 animate-bounce text-2xl sm:text-3xl">↓</p>
+        <p className="absolute bottom-4 sm:bottom-12 animate-bounce text-2xl sm:text-3xl cursor-pointer" onClick={() => contactMeRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
       </div>
 
-      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]">
+      <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={contactMeRef}>
         <div className="w-[calc(100vw-3rem)] lg:w-[calc(100vw-10rem)] flex flex-col lg:flex-row items-center place-content-between">
           <h3 className="text-4xl md:text-5xl lg:text-8xl mb-8 md:mb-12 lg:mb-0 font-bold text-center lg:text-left max-w-[80%] lg:max-w-[50%]">Have a great idea in mind?</h3>
           <div className="lg:w-[45%] flex flex-col">
