@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Head from 'next/head'
+import Image from "next/image"
 
 import HoverWrapper from "../components/HoverWrapper"
 import ExperienceCard from '../components/ExperienceCard'
@@ -187,7 +188,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Vincent's Portfolio</title>
+        <title>Vincent&apos;s Portfolio</title>
         <meta charSet="UTF-8" />
         <meta name="description" content="Portfolio of Vincent Suryakim" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -244,16 +245,16 @@ const Home: NextPage = () => {
               <p className="text-center mt-6 lg:mt-8 text-lg text-white">Feel free to connect with me via</p>
               <div className="flex flex-row items-center space-x-5 mt-2.5 mb-2">
                 <a href="https://www.linkedin.com/in/vincent-suryakim-70a80a1b6" rel="noreferrer" target="_blank">
-                  <img src="social/linkedin.png" className="h-7" />
+                  <Image src="social/linkedin.png" alt="linkedin" className="h-7" />
                 </a>
                 <a href="https://github.com/vincentsuryakim" rel="noreferrer" target="_blank">
-                  <img src="social/github.png" className="h-7" />
+                  <Image src="social/github.png" alt="github" className="h-7" />
                 </a>
                 <a href="https://www.instagram.com/vincentsuryakim/" rel="noreferrer" target="_blank">
-                  <img src="social/instagram.png" className="h-7" />
+                  <Image src="social/instagram.png" alt="instagram" className="h-7" />
                 </a>
                 <a href="https://gitlab.com/vincent.suryakim" rel="noreferrer" target="_blank">
-                  <img src="social/gitlab.png" className="h-7" />
+                  <Image src="social/gitlab.png" alt="gitlab" className="h-7" />
                 </a>
               </div>
             </motion.div>
@@ -419,16 +420,16 @@ const Home: NextPage = () => {
               variants={popUpVariants}
             >
               <div className="max-h-[20rem] overflow-y-scroll lg:overflow-auto grid grid-flow-row grid-cols-2 lg:grid-cols-5 gap-14">
-                <a href="https://www.python.org/" rel="noreferrer" target="_blank"><img src="skills/python.png" alt="Python" className="h-20" /></a>
-                <a href="https://www.java.com/en/" rel="noreferrer" target="_blank"><img src="skills/java.png" alt="Java" className="h-20" /></a>
-                <a href="https://nextjs.org/" rel="noreferrer" target="_blank"><img src="skills/nextjs.png" alt="NextJS" className="h-20" /></a>
-                <a href="https://reactjs.org/" rel="noreferrer" target="_blank"><img src="skills/react.png" alt="ReactJS" className="h-20" /></a>
-                <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank"><img src="skills/tailwind.png" alt="TailwindCSS" className="h-20" /></a>
-                <a href="https://hasura.io/" rel="noreferrer" target="_blank"><img src="skills/hasura.png" alt="Hasura" className="h-20" /></a>
-                <a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank"><img src="skills/typescript.png" alt="TypeScript" className="h-20" /></a>
-                <a href="https://www.docker.com/" rel="noreferrer" target="_blank"><img src="skills/docker.png" alt="Docker" className="h-20" /></a>
-                <a href="https://git-scm.com/" rel="noreferrer" target="_blank"><img src="skills/git.png" alt="Git" className="h-20" /></a>
-                <a href="https://nodejs.org/en/" rel="noreferrer" target="_blank"><img src="skills/nodejs.png" alt="NodeJS" className="h-20" /></a>
+                <a href="https://www.python.org/" rel="noreferrer" target="_blank"><Image src="skills/python.png" alt="Python" className="h-20" /></a>
+                <a href="https://www.java.com/en/" rel="noreferrer" target="_blank"><Image src="skills/java.png" alt="Java" className="h-20" /></a>
+                <a href="https://nextjs.org/" rel="noreferrer" target="_blank"><Image src="skills/nextjs.png" alt="NextJS" className="h-20" /></a>
+                <a href="https://reactjs.org/" rel="noreferrer" target="_blank"><Image src="skills/react.png" alt="ReactJS" className="h-20" /></a>
+                <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank"><Image src="skills/tailwind.png" alt="TailwindCSS" className="h-20" /></a>
+                <a href="https://hasura.io/" rel="noreferrer" target="_blank"><Image src="skills/hasura.png" alt="Hasura" className="h-20" /></a>
+                <a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank"><Image src="skills/typescript.png" alt="TypeScript" className="h-20" /></a>
+                <a href="https://www.docker.com/" rel="noreferrer" target="_blank"><Image src="skills/docker.png" alt="Docker" className="h-20" /></a>
+                <a href="https://git-scm.com/" rel="noreferrer" target="_blank"><Image src="skills/git.png" alt="Git" className="h-20" /></a>
+                <a href="https://nodejs.org/en/" rel="noreferrer" target="_blank"><Image src="skills/nodejs.png" alt="NodeJS" className="h-20" /></a>
               </div>
             </motion.div>
           </div>

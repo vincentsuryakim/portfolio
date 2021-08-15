@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import Image from "next/image"
 
 export interface HoverWrapperProps { imgSrc:string, href:string }
 
@@ -33,7 +34,7 @@ const HoverWrapper:React.FC<HoverWrapperProps> = ({ children, imgSrc, href }) =>
                     variants={showVariants}
                     animate={hovering ? "visible" : "hidden"}
                 >
-                    <img src={imgSrc} className="h-full" />
+                    <Image src={imgSrc} alt="experience" className="h-full" />
                 </motion.div>
             </motion.div>
         </a>
