@@ -108,7 +108,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="flex lg:hidden w-full overflow-x-scroll space-x-4">
-                <ExperienceCard>
+                <ExperienceCard href="https://www.compfest.id/">
                   <h4 className="text-left text-2xl font-semibold">COMPFEST</h4>
                   <h5 className="text-md italic">Manager of IT Development</h5>
                   <h5 className="text-md italic">2021 - Present</h5>
@@ -122,7 +122,7 @@ const Home: NextPage = () => {
                   </ul>
                 </ExperienceCard>
                 
-                <ExperienceCard>
+                <ExperienceCard href="http://betis.cs.ui.ac.id/">
                   <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
                   <h5 className="text-md italic">VPIC of Web Development</h5>
                   <h5 className="text-md italic">2021 - Present</h5>
@@ -131,7 +131,7 @@ const Home: NextPage = () => {
                   </ul> */}
                 </ExperienceCard>
 
-                <ExperienceCard>
+                <ExperienceCard href="https://bem.cs.ui.ac.id/">
                   <h4 className="text-left text-2xl font-semibold">BEM Fakultas Ilmu Komputer</h4>
                   <h5 className="text-md italic">Staff of Project Development</h5>
                   <h5 className="text-md italic">2021 - Present</h5>
@@ -140,7 +140,7 @@ const Home: NextPage = () => {
                   </ul>
                 </ExperienceCard>
 
-                <ExperienceCard>
+                <ExperienceCard href="https://perak.cs.ui.ac.id/">
                   <h4 className="text-left text-2xl font-semibold">Pesta Rakyat Komputer</h4>
                   <h5 className="text-md italic">Front-end Web Developer &nbsp;&bull;&nbsp; 2021</h5>
                   <ul className="mt-2 list-disc list-inside">
@@ -211,7 +211,7 @@ const Home: NextPage = () => {
         <div className="w-[calc(100vw-3rem)] sm:w-[calc(100vw-10rem)] flex flex-col items-center">
           <h3 className="text-3xl text-left font-bold mb-7">Projects</h3>
           <div className="grid grid-flow-row grid-cols-2 sm:grid-cols-3 lg:grid-cols-3">
-            <ProjectBox imgSrc="projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia" />
+            <ProjectBox status="defunct" imgSrc="projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia (defunct)" />
             <ProjectBox imgSrc="projects/todolist.png" href="https://todolist-bismit.netlify.app" title="Todo List" />
             <ProjectBox imgSrc="projects/pendekin.png" href="https://sh.webzerver.xyz" title="URL Shortener" />
           </div>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-export interface ProjectBoxProps { imgSrc:string, href:string, title:string }
+export interface ProjectBoxProps { imgSrc:string, href:string, title:string, status?:string }
 
-const ProjectBox:React.FC<ProjectBoxProps> = ({ imgSrc, href, title }) => {
+const ProjectBox:React.FC<ProjectBoxProps> = ({ imgSrc, href, title, status = "available" }) => {
     const [hovering, setHovering] = useState<boolean>(false);
 
     const showVariants = {
@@ -26,13 +26,18 @@ const ProjectBox:React.FC<ProjectBoxProps> = ({ imgSrc, href, title }) => {
         }
     }
 
+    const cursorStatus: {[ id: string ]: string} = {
+        available: 'cursor-pointer',
+        defunct: 'cursor-not-allowed',
+    }
+
     return (
-        <a href={href} rel="noreferrer" target="_blank">
-            <motion.div
-                className="relative w-40 h-40 sm:w-40 sm:h-40 bg-black"
-                onHoverStart={() => setHovering(true)}
-                onHoverEnd={() => setHovering(false)}
-            >
+        <motion.div
+            className={`${cursorStatus[status]} relative w-40 h-40 sm:w-40 sm:h-40 bg-black`}
+            onHoverStart={() => setHovering(true)}
+            onHoverEnd={() => setHovering(false)}
+        >
+            <a href={href} rel="noreferrer" target="_blank" className={`${status === "available" ? "" : "pointer-events-none"}`}>
                 <motion.img
                     src={imgSrc}
                     className="absolute"
@@ -40,12 +45,12 @@ const ProjectBox:React.FC<ProjectBoxProps> = ({ imgSrc, href, title }) => {
                     animate={hovering ? "opaque" : "visible"}
                 />
                 <motion.p
-                    className="text-white absolute w-full h-full flex items-center justify-center font-medium"
+                    className="text-white text-center absolute w-full h-full flex items-center justify-center font-medium"
                     variants={showVariants}
                     animate={hovering ? "visible" : "hidden"}
                 >{title}</motion.p>
-            </motion.div>
-        </a>
+            </a>
+        </motion.div>
     );
 }
 
