@@ -5,6 +5,9 @@ import { motion } from 'framer-motion'
 import Head from 'next/head'
 
 import HoverWrapper from "../components/HoverWrapper"
+import ExperienceCard from '../components/ExperienceCard'
+
+// Don't forget to add experience or skills to both mobile and desktop views
 
 const Home: NextPage = () => {
   const aboutMeRef = useRef<null|HTMLDivElement>(null)
@@ -59,8 +62,8 @@ const Home: NextPage = () => {
 
       <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={experienceRef}>
         <div className="w-[calc(100vw-3rem)] lg:w-[calc(100vw-10rem)] flex flex-col-reverse lg:flex-row items-center place-content-between">
-          <div className="lg:w-[45%] flex flex-col max-h-[30rem] lg:max-h-[36rem] overflow-y-scroll">
-            <HoverWrapper imgSrc="experience/compfest.svg">
+          <div className="lg:w-[45%] overflow-x-hidden hidden lg:flex flex-col max-h-[30rem] lg:max-h-[36rem] overflow-y-scroll">
+            <HoverWrapper imgSrc="experience/compfest.svg" href="https://www.compfest.id/">
               <h4 className="text-left text-2xl font-semibold">COMPFEST</h4>
               <h5 className="text-md italic">Manager of IT Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
               {/* <ul className="mt-2 list-disc list-inside">
@@ -73,7 +76,7 @@ const Home: NextPage = () => {
             </HoverWrapper>
 
             <div className="mt-7">
-              <HoverWrapper imgSrc="experience/betis.svg">
+              <HoverWrapper imgSrc="experience/betis.svg" href="http://betis.cs.ui.ac.id/">
                 <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
                 <h5 className="text-md italic">VPIC of Web Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
                 {/* <ul className="mt-2 list-disc list-inside">
@@ -83,7 +86,7 @@ const Home: NextPage = () => {
             </div>
             
             <div className="mt-7">
-              <HoverWrapper imgSrc="experience/bem.png">
+              <HoverWrapper imgSrc="experience/bem.png" href="https://bem.cs.ui.ac.id/">
                 <h4 className="text-left text-2xl font-semibold">BEM Fakultas Ilmu Komputer</h4>
                 <h5 className="text-md italic">Staff of Project Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
                 <ul className="mt-2 list-disc list-inside">
@@ -93,7 +96,7 @@ const Home: NextPage = () => {
             </div>
 
             <div className="mt-7">
-              <HoverWrapper imgSrc="experience/perak.svg">
+              <HoverWrapper imgSrc="experience/perak.svg" href="https://perak.cs.ui.ac.id/">
                 <h4 className="text-left text-2xl font-semibold">Pesta Rakyat Komputer</h4>
                 <h5 className="text-md italic">Front-end Web Developer &nbsp;&bull;&nbsp; 2021</h5>
                 <ul className="mt-2 list-disc list-inside">
@@ -102,6 +105,48 @@ const Home: NextPage = () => {
                 </ul>
               </HoverWrapper>
             </div>
+          </div>
+          <div className="flex lg:hidden w-full overflow-x-scroll space-x-4">
+                <ExperienceCard>
+                  <h4 className="text-left text-2xl font-semibold">COMPFEST</h4>
+                  <h5 className="text-md italic">Manager of IT Development</h5>
+                  <h5 className="text-md italic">2021 - Present</h5>
+                  {/* <ul className="mt-2 list-disc list-inside">
+                    <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
+                  </ul> */}
+                  <h5 className="text-md italic border-t-[1px] border-gray-300 mt-2 pt-2">Software Engineer</h5>
+                  <h5 className="text-md italic">2021</h5>
+                  <ul className="mt-2 list-disc list-inside">
+                    <li>To be added.</li>
+                  </ul>
+                </ExperienceCard>
+                
+                <ExperienceCard>
+                  <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
+                  <h5 className="text-md italic">VPIC of Web Development</h5>
+                  <h5 className="text-md italic">2021 - Present</h5>
+                  {/* <ul className="mt-2 list-disc list-inside">
+                    <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
+                  </ul> */}
+                </ExperienceCard>
+
+                <ExperienceCard>
+                  <h4 className="text-left text-2xl font-semibold">BEM Fakultas Ilmu Komputer</h4>
+                  <h5 className="text-md italic">Staff of Project Development</h5>
+                  <h5 className="text-md italic">2021 - Present</h5>
+                  <ul className="mt-2 list-disc list-inside">
+                    <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
+                  </ul>
+                </ExperienceCard>
+
+                <ExperienceCard>
+                  <h4 className="text-left text-2xl font-semibold">Pesta Rakyat Komputer</h4>
+                  <h5 className="text-md italic">Front-end Web Developer &nbsp;&bull;&nbsp; 2021</h5>
+                  <ul className="mt-2 list-disc list-inside">
+                    <li>Developed a responsive and interactive Cafeteria-Map, Games-Map, TypeRacer, and Registration Confirmation page using React.JS, styled-components, and ContextAPI.</li>
+                    <li>Fetched data from a back-end server using Axios and displayed it to the user.</li>
+                  </ul>
+                </ExperienceCard>
           </div>
           <h3 className="text-4xl lg:text-8xl mb-8 md:mb-12 lg:mb-0 text-right font-bold">Experience</h3>
         </div>
@@ -115,8 +160,8 @@ const Home: NextPage = () => {
             <h4 className="text-left text-2xl font-semibold">Universitas Indonesia</h4>
             <h5 className="text-md italic">Bachelor of Computer Science &nbsp;&bull;&nbsp; 2020 - 2024</h5>
             <ul className="mt-2 list-disc list-inside">
-              <li>Peer Tutor for Introduction to Digital Systems in 2<sup>nd</sup> semester</li>
               <li>Teaching Assistant for Foundations of Programming 1 in 3<sup>rd</sup> semester</li>
+              <li>Peer Tutor for Introduction to Digital Systems in 2<sup>nd</sup> semester</li>
             </ul>
 
             <h4 className="text-left text-2xl font-semibold mt-9">SMAK 1 Penabur Jakarta</h4>
@@ -130,18 +175,17 @@ const Home: NextPage = () => {
         <div className="w-[calc(100vw-10rem)] flex flex-col items-center">
           <h3 className="text-3xl text-left font-bold mb-8 lg:mb-7">Skills</h3>
           <div className="hidden lg:flex lg:flex-col lg:items-center">
-            <div className="flex space-x-16">
+            <div className="grid grid-flow-row grid-cols-5 gap-14">
               <img src="skills/nextjs.png" className="h-20" />
               <img src="skills/python.png" className="h-20" />
               <img src="skills/java.png" className="h-20" />
-              <img src="skills/react.svg" className="h-20" />
+              <img src="skills/react.png" className="h-20" />
               <img src="skills/tailwind.png" className="h-20" />
-            </div>
-            <div className="flex space-x-16 mt-8">
               <img src="skills/hasura.png" className="h-20" />
               <img src="skills/typescript.png" className="h-20" />
               <img src="skills/docker.png" className="h-20" />
               <img src="skills/git.png" className="h-20" />
+              <img src="skills/nodejs.png" className="h-20" />
             </div>
           </div>
           <div className="flex flex-col max-h-[30rem] overflow-y-scroll lg:hidden space-y-8">
@@ -155,6 +199,7 @@ const Home: NextPage = () => {
               <li>TypeScript</li>
               <li>Docker</li>
               <li>Git</li>
+              <li>NodeJS</li>
             </ul>
           </div>
         </div>
@@ -180,11 +225,11 @@ const Home: NextPage = () => {
             <h5 className="text-md text-2xl md:text-4xl font-semibold">+62 8179 9901 13</h5>
 
             <a href="mailto:vincent.suryakim@ui.ac.id" className="w-full mt-9">
-              <button className="w-full bg-yellow-500 hover:bg-green-500 text-white h-12 font-semibold tracking-wider rounded-md">Let&apos;s Talk!</button>
+              <button className="w-full bg-yellow-500 transition duration-300 ease-in-out hover:bg-green-500 text-white h-12 font-semibold tracking-wider rounded-md">Let&apos;s Talk!</button>
             </a>
           </div>
         </div>
-        <p className="absolute bottom-6 font-medium">Vincent Suryakim</p>
+        <p className="absolute bottom-6 font-medium">2021 &copy; Vincent Suryakim</p>
       </div>
     </div>
   )
