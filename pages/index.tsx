@@ -1,7 +1,10 @@
 import type { NextPage } from 'next'
 import { Typewriter } from 'react-simple-typewriter'
 import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import Head from 'next/head'
+
+import HoverWrapper from "../components/HoverWrapper"
 
 const Home: NextPage = () => {
   const aboutMeRef = useRef<null|HTMLDivElement>(null)
@@ -57,7 +60,7 @@ const Home: NextPage = () => {
       <div className="relative flex items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={experienceRef}>
         <div className="w-[calc(100vw-3rem)] lg:w-[calc(100vw-10rem)] flex flex-col-reverse lg:flex-row items-center place-content-between">
           <div className="lg:w-[45%] flex flex-col max-h-[30rem] lg:max-h-[36rem] overflow-y-scroll">
-            <div>
+            <HoverWrapper imgSrc="experience/compfest.svg">
               <h4 className="text-left text-2xl font-semibold">COMPFEST</h4>
               <h5 className="text-md italic">Manager of IT Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
               {/* <ul className="mt-2 list-disc list-inside">
@@ -67,31 +70,37 @@ const Home: NextPage = () => {
               <ul className="mt-2 list-disc list-inside">
                 <li>To be added.</li>
               </ul>
-            </div>
+            </HoverWrapper>
 
-            <div className="mt-9">
-              <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
-              <h5 className="text-md italic">VPIC of Web Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
-              {/* <ul className="mt-2 list-disc list-inside">
-                <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
-              </ul> */}
+            <div className="mt-7">
+              <HoverWrapper imgSrc="experience/betis.svg">
+                <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
+                <h5 className="text-md italic">VPIC of Web Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
+                {/* <ul className="mt-2 list-disc list-inside">
+                  <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
+                </ul> */}
+              </HoverWrapper>
             </div>
             
-            <div className="mt-9">
-              <h4 className="text-left text-2xl font-semibold">BEM Fakultas Ilmu Komputer</h4>
-              <h5 className="text-md italic">Staff of Project Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
-              <ul className="mt-2 list-disc list-inside">
-                <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
-              </ul>
+            <div className="mt-7">
+              <HoverWrapper imgSrc="experience/bem.png">
+                <h4 className="text-left text-2xl font-semibold">BEM Fakultas Ilmu Komputer</h4>
+                <h5 className="text-md italic">Staff of Project Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
+                <ul className="mt-2 list-disc list-inside">
+                  <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
+                </ul>
+              </HoverWrapper>
             </div>
 
-            <div className="mt-9">
-              <h4 className="text-left text-2xl font-semibold">Pesta Rakyat Komputer</h4>
-              <h5 className="text-md italic">Front-end Web Developer &nbsp;&bull;&nbsp; 2021</h5>
-              <ul className="mt-2 list-disc list-inside">
-                <li>Developed a responsive and interactive Cafeteria-Map, Games-Map, TypeRacer, and Registration Confirmation page using React.JS, styled-components, and ContextAPI.</li>
-                <li>Fetched data from a back-end server using Axios and displayed it to the user.</li>
-              </ul>
+            <div className="mt-7">
+              <HoverWrapper imgSrc="experience/perak.svg">
+                <h4 className="text-left text-2xl font-semibold">Pesta Rakyat Komputer</h4>
+                <h5 className="text-md italic">Front-end Web Developer &nbsp;&bull;&nbsp; 2021</h5>
+                <ul className="mt-2 list-disc list-inside">
+                  <li>Developed a responsive and interactive Cafeteria-Map, Games-Map, TypeRacer, and Registration Confirmation page using React.JS, styled-components, and ContextAPI.</li>
+                  <li>Fetched data from a back-end server using Axios and displayed it to the user.</li>
+                </ul>
+              </HoverWrapper>
             </div>
           </div>
           <h3 className="text-4xl lg:text-8xl mb-8 md:mb-12 lg:mb-0 text-right font-bold">Experience</h3>
