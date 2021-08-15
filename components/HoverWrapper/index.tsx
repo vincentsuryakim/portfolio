@@ -29,13 +29,13 @@ const HoverWrapper:React.FC<HoverWrapperProps> = ({ children, imgSrc, href }) =>
                 >
                     {children}
                 </motion.div>
-                <motion.div
+                <motion.img
+                    src={imgSrc}
+                    alt="experience"
                     className="absolute bottom-0 right-0 h-full"
                     variants={showVariants}
                     animate={hovering ? "visible" : "hidden"}
-                >
-                    <Image src={imgSrc} alt="experience" className="h-full" />
-                </motion.div>
+                />
             </motion.div>
         </a>
     );

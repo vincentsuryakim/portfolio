@@ -245,16 +245,24 @@ const Home: NextPage = () => {
               <p className="text-center mt-6 lg:mt-8 text-lg text-white">Feel free to connect with me via</p>
               <div className="flex flex-row items-center space-x-5 mt-2.5 mb-2">
                 <a href="https://www.linkedin.com/in/vincent-suryakim-70a80a1b6" rel="noreferrer" target="_blank">
-                  <Image src="social/linkedin.png" alt="linkedin" className="h-7" />
+                  <div className="h-7 w-7 relative">
+                    <Image src="/social/linkedin.png" alt="linkedin" layout="fill" />
+                  </div>
                 </a>
                 <a href="https://github.com/vincentsuryakim" rel="noreferrer" target="_blank">
-                  <Image src="social/github.png" alt="github" className="h-7" />
+                  <div className="h-7 w-7 relative">
+                    <Image src="/social/github.png" alt="github" layout="fill" />
+                  </div>
                 </a>
                 <a href="https://www.instagram.com/vincentsuryakim/" rel="noreferrer" target="_blank">
-                  <Image src="social/instagram.png" alt="instagram" className="h-7" />
+                  <div className="h-7 w-7 relative">
+                    <Image src="/social/instagram.png" alt="instagram" layout="fill" />
+                  </div>
                 </a>
                 <a href="https://gitlab.com/vincent.suryakim" rel="noreferrer" target="_blank">
-                  <Image src="social/gitlab.png" alt="gitlab" className="h-7" />
+                  <div className="h-7 w-7 relative">
+                    <Image src="/social/gitlab.png" alt="gitlab" layout="fill" />
+                  </div>
                 </a>
               </div>
             </motion.div>
@@ -271,7 +279,7 @@ const Home: NextPage = () => {
               animate={controlsExperienceContent}
               variants={showVariants}
             >
-              <HoverWrapper imgSrc="experience/compfest.svg" href="https://www.compfest.id/">
+              <HoverWrapper imgSrc="/experience/compfest.svg" href="https://www.compfest.id/">
                 <h4 className="text-left text-2xl font-semibold">COMPFEST</h4>
                 <h5 className="text-md italic">Manager of IT Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
                 {/* <ul className="mt-2 list-disc list-inside">
@@ -284,7 +292,7 @@ const Home: NextPage = () => {
               </HoverWrapper>
 
               <div className="mt-7">
-                <HoverWrapper imgSrc="experience/betis.svg" href="http://betis.cs.ui.ac.id/">
+                <HoverWrapper imgSrc="/experience/betis.svg" href="http://betis.cs.ui.ac.id/">
                   <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
                   <h5 className="text-md italic">VPIC of Web Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
                   {/* <ul className="mt-2 list-disc list-inside">
@@ -294,7 +302,7 @@ const Home: NextPage = () => {
               </div>
               
               <div className="mt-7">
-                <HoverWrapper imgSrc="experience/bem.png" href="https://bem.cs.ui.ac.id/">
+                <HoverWrapper imgSrc="/experience/bem.png" href="https://bem.cs.ui.ac.id/">
                   <h4 className="text-left text-2xl font-semibold">BEM Fakultas Ilmu Komputer</h4>
                   <h5 className="text-md italic">Staff of Project Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
                   <ul className="mt-2 list-disc list-inside">
@@ -304,7 +312,7 @@ const Home: NextPage = () => {
               </div>
 
               <div className="mt-7">
-                <HoverWrapper imgSrc="experience/perak.svg" href="https://perak.cs.ui.ac.id/">
+                <HoverWrapper imgSrc="/experience/perak.svg" href="https://perak.cs.ui.ac.id/">
                   <h4 className="text-left text-2xl font-semibold">Pesta Rakyat Komputer</h4>
                   <h5 className="text-md italic">Front-end Web Developer &nbsp;&bull;&nbsp; 2021</h5>
                   <ul className="mt-2 list-disc list-inside">
@@ -420,16 +428,56 @@ const Home: NextPage = () => {
               variants={popUpVariants}
             >
               <div className="max-h-[20rem] overflow-y-scroll lg:overflow-auto grid grid-flow-row grid-cols-2 lg:grid-cols-5 gap-14">
-                <a href="https://www.python.org/" rel="noreferrer" target="_blank"><Image src="skills/python.png" alt="Python" className="h-20" /></a>
-                <a href="https://www.java.com/en/" rel="noreferrer" target="_blank"><Image src="skills/java.png" alt="Java" className="h-20" /></a>
-                <a href="https://nextjs.org/" rel="noreferrer" target="_blank"><Image src="skills/nextjs.png" alt="NextJS" className="h-20" /></a>
-                <a href="https://reactjs.org/" rel="noreferrer" target="_blank"><Image src="skills/react.png" alt="ReactJS" className="h-20" /></a>
-                <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank"><Image src="skills/tailwind.png" alt="TailwindCSS" className="h-20" /></a>
-                <a href="https://hasura.io/" rel="noreferrer" target="_blank"><Image src="skills/hasura.png" alt="Hasura" className="h-20" /></a>
-                <a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank"><Image src="skills/typescript.png" alt="TypeScript" className="h-20" /></a>
-                <a href="https://www.docker.com/" rel="noreferrer" target="_blank"><Image src="skills/docker.png" alt="Docker" className="h-20" /></a>
-                <a href="https://git-scm.com/" rel="noreferrer" target="_blank"><Image src="skills/git.png" alt="Git" className="h-20" /></a>
-                <a href="https://nodejs.org/en/" rel="noreferrer" target="_blank"><Image src="skills/nodejs.png" alt="NodeJS" className="h-20" /></a>
+                <a href="https://www.python.org/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/python.png" alt="Python" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://www.java.com/en/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/java.png" alt="Java" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://nextjs.org/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/nextjs.png" alt="NextJS" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://reactjs.org/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/react.png" alt="ReactJS" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/tailwind.png" alt="TailwindCSS" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://hasura.io/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/hasura.png" alt="Hasura" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/typescript.png" alt="TypeScript" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://www.docker.com/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/docker.png" alt="Docker" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://git-scm.com/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/git.png" alt="Git" layout="fill" />
+                  </div>
+                </a>
+                <a href="https://nodejs.org/en/" rel="noreferrer" target="_blank">
+                  <div className="relative h-20 w-20">
+                    <Image src="/skills/nodejs.png" alt="NodeJS" layout="fill" />
+                  </div>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -452,9 +500,9 @@ const Home: NextPage = () => {
               animate={controlsProjectsContent}
               variants={popUpVariants}
             >
-              <ProjectBox status="defunct" imgSrc="projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia (defunct)" />
-              <ProjectBox imgSrc="projects/todolist.png" href="https://todolist-bismit.netlify.app" title="Todo List" />
-              <ProjectBox imgSrc="projects/pendekin.png" href="https://sh.webzerver.xyz" title="URL Shortener" />
+              <ProjectBox status="defunct" imgSrc="/projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia (defunct)" />
+              <ProjectBox imgSrc="/projects/todolist.png" href="https://todolist-bismit.netlify.app" title="Todo List" />
+              <ProjectBox imgSrc="/projects/pendekin.png" href="https://sh.webzerver.xyz" title="URL Shortener" />
             </motion.div>
           </div>
           <p className="absolute bottom-4 sm:bottom-12 animate-bounce text-2xl sm:text-3xl cursor-pointer" onClick={() => contactMeRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
