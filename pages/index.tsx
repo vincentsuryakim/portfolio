@@ -6,6 +6,7 @@ import Head from 'next/head'
 
 import HoverWrapper from "../components/HoverWrapper"
 import ExperienceCard from '../components/ExperienceCard'
+import ProjectBox from '../components/ProjectBox'
 
 // Don't forget to add experience or skills to both mobile and desktop views
 
@@ -176,23 +177,23 @@ const Home: NextPage = () => {
           <h3 className="text-3xl text-left font-bold mb-8 lg:mb-7">Skills</h3>
           <div className="hidden lg:flex lg:flex-col lg:items-center">
             <div className="grid grid-flow-row grid-cols-5 gap-14">
-              <img src="skills/nextjs.png" className="h-20" />
-              <img src="skills/python.png" className="h-20" />
-              <img src="skills/java.png" className="h-20" />
-              <img src="skills/react.png" className="h-20" />
-              <img src="skills/tailwind.png" className="h-20" />
-              <img src="skills/hasura.png" className="h-20" />
-              <img src="skills/typescript.png" className="h-20" />
-              <img src="skills/docker.png" className="h-20" />
-              <img src="skills/git.png" className="h-20" />
-              <img src="skills/nodejs.png" className="h-20" />
+              <a href="https://www.python.org/" rel="noreferrer" target="_blank"><img src="skills/python.png" alt="Python" className="h-20" /></a>
+              <a href="https://www.java.com/en/" rel="noreferrer" target="_blank"><img src="skills/java.png" alt="Java" className="h-20" /></a>
+              <a href="https://nextjs.org/" rel="noreferrer" target="_blank"><img src="skills/nextjs.png" alt="NextJS" className="h-20" /></a>
+              <a href="https://reactjs.org/" rel="noreferrer" target="_blank"><img src="skills/react.png" alt="ReactJS" className="h-20" /></a>
+              <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank"><img src="skills/tailwind.png" alt="TailwindCSS" className="h-20" /></a>
+              <a href="https://hasura.io/" rel="noreferrer" target="_blank"><img src="skills/hasura.png" alt="Hasura" className="h-20" /></a>
+              <a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank"><img src="skills/typescript.png" alt="TypeScript" className="h-20" /></a>
+              <a href="https://www.docker.com/" rel="noreferrer" target="_blank"><img src="skills/docker.png" alt="Docker" className="h-20" /></a>
+              <a href="https://git-scm.com/" rel="noreferrer" target="_blank"><img src="skills/git.png" alt="Git" className="h-20" /></a>
+              <a href="https://nodejs.org/en/" rel="noreferrer" target="_blank"><img src="skills/nodejs.png" alt="NodeJS" className="h-20" /></a>
             </div>
           </div>
           <div className="flex flex-col max-h-[30rem] overflow-y-scroll lg:hidden space-y-8">
             <ul className="list-disc list-inside">
-              <li>NextJS</li>
               <li>Python</li>
               <li>Java</li>
+              <li>NextJS</li>
               <li>ReactJS</li>
               <li>TailwindCSS</li>
               <li>Hasura</li>
@@ -207,9 +208,13 @@ const Home: NextPage = () => {
       </div>
 
       <div className="relative flex flex-col items-center justify-center snap-start w-screen max-w-[-webkit-fill-available] h-screen max-h-[-webkit-fill-available]" ref={projectRef}>
-        <div className="w-[calc(100vw-10rem)] flex flex-col items-center">
+        <div className="w-[calc(100vw-3rem)] sm:w-[calc(100vw-10rem)] flex flex-col items-center">
           <h3 className="text-3xl text-left font-bold mb-7">Projects</h3>
-          <p className="italic">Coming Soon</p>
+          <div className="grid grid-flow-row grid-cols-2 sm:grid-cols-3 lg:grid-cols-3">
+            <ProjectBox imgSrc="projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia" />
+            <ProjectBox imgSrc="projects/todolist.png" href="https://todolist-bismit.netlify.app" title="Todo List" />
+            <ProjectBox imgSrc="projects/pendekin.png" href="https://sh.webzerver.xyz" title="URL Shortener" />
+          </div>
         </div>
         <p className="absolute bottom-4 sm:bottom-12 animate-bounce text-2xl sm:text-3xl cursor-pointer" onClick={() => contactMeRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
       </div>
