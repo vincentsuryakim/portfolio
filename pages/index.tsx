@@ -228,6 +228,7 @@ const Home: NextPage = () => {
               <motion.img
                 className="rounded-full w-48"
                 src="profile.jpg"
+                alt="profilephoto"
                 onHoverStart={() => setProfileHovering(true)}
                 onHoverEnd={() => setProfileHovering(false)}
                 variants={{
@@ -500,9 +501,24 @@ const Home: NextPage = () => {
               animate={controlsProjectsContent}
               variants={popUpVariants}
             >
-              <ProjectBox status="defunct" imgSrc="/projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia (defunct)" />
-              <ProjectBox imgSrc="/projects/todolist.png" href="https://todolist-bismit.netlify.app" title="Todo List" />
-              <ProjectBox imgSrc="/projects/pendekin.png" href="https://sh.webzerver.xyz" title="URL Shortener" />
+              <ProjectBox status="defunct" imgSrc="/projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia" techs={["ReactJS", "Apollo", "styled-components"]}>
+                <p className="mb-2">Recruitment task for COMPFEST13&apos;s Software Engineering Team</p>
+                <ul className="list-disc list-inside">
+                    <li>Developed a search engine for memes.</li>
+                    <li>Memes can be saved in a web browser with no expiration date using LocalStorage.</li>
+                </ul>
+              </ProjectBox>
+              <ProjectBox imgSrc="/projects/todolist.png" href="https://todolist-bismit.netlify.app" title="Todo List" techs={["ReactJS", "styled-components"]}>
+                <ul className="list-disc list-inside">
+                    <li>Tasks are saved in a web browser with no expiration date using LocalStorage.</li>
+                </ul>
+              </ProjectBox>
+              <ProjectBox imgSrc="/projects/pendekin.png" href="https://sh.webzerver.xyz" title="URL Shortener" techs={["NextJS", "TailwindCSS", "Typescript", "Prisma", "Route 53", "NGINX"]}>
+                <ul className="list-disc list-inside">
+                  <li>Prisma and SQLite database are saved in the same repository to minimize redirecting delay.</li>
+                  <li>Deployed website to a linux server using Route 53 and NGINX.</li>
+                </ul>
+              </ProjectBox>
             </motion.div>
           </div>
           <p className="absolute bottom-4 sm:bottom-12 animate-bounce text-2xl sm:text-3xl cursor-pointer" onClick={() => contactMeRef.current!.scrollIntoView({ behavior: 'smooth' })}>↓</p>
@@ -513,11 +529,7 @@ const Home: NextPage = () => {
             <h3 className="text-4xl md:text-5xl lg:text-8xl mb-8 md:mb-12 lg:mb-0 font-bold text-center lg:text-left max-w-[80%] lg:max-w-[50%]">Have a great idea in mind?</h3>
             <div className="lg:w-[45%] flex flex-col">
               <h4 className="text-left text-xl">Email</h4>
-              <h5 className="text-md text-2xl md:text-4xl font-semibold">vincent.suryakim@ui.ac.id</h5>
-
-              <h4 className="text-left text-xl mt-9">Phone</h4>
-              <h5 className="text-md text-2xl md:text-4xl font-semibold">+62 8179 9901 13</h5>
-
+              <h5 className="text-md text-2xl md:text-4xl font-semibold">vincent.suryakim[at]ui.ac.id</h5>
               <a href="mailto:vincent.suryakim@ui.ac.id" className="w-full mt-9">
                 <button className="w-full bg-yellow-500 transition duration-300 ease-in-out hover:bg-green-500 text-white h-12 font-semibold tracking-wider rounded-md">Let&apos;s Talk!</button>
               </a>
