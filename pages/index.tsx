@@ -10,7 +10,7 @@ import HoverWrapper from "../components/HoverWrapper"
 import ExperienceCard from '../components/ExperienceCard'
 import ProjectBox from '../components/ProjectBox'
 
-// Don't forget to add experience or skills to both mobile and desktop views
+// Don't forget to add experience to both mobile and desktop views
 
 const Home: NextPage = () => {
   const homeRef = useRef<null|HTMLDivElement>(null)
