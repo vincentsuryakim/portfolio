@@ -1,6 +1,5 @@
 import React, { useState, Fragment } from 'react';
 import { Dialog, Transition  } from '@headlessui/react';
-import { motion } from "framer-motion";
 
 export interface ExperienceCardProps { href: string, img: string, title: string, role: string, time: string}
 
