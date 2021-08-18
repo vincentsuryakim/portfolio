@@ -294,7 +294,7 @@ const Home: NextPage = () => {
 
               <div className="mt-7">
                 <HoverWrapper imgSrc="/experience/betis.svg" href="http://betis.cs.ui.ac.id/">
-                  <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
+                  <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI</h4>
                   <h5 className="text-md italic">VPIC of Web Development &nbsp;&bull;&nbsp; 2021 - Present</h5>
                   {/* <ul className="mt-2 list-disc list-inside">
                     <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
@@ -324,14 +324,13 @@ const Home: NextPage = () => {
               </div>
             </motion.div>
             <motion.div
-              className="flex lg:hidden w-full overflow-x-scroll space-x-4"
+              className="flex lg:hidden w-full h-[20rem] overflow-x-scroll space-x-4"
               ref={experienceContentMobileRef}
               initial="hidden"
               animate={controlsExperienceContentMobile}
               variants={showVariants}
             >
-                  <ExperienceCard href="https://www.compfest.id/">
-                    <h4 className="text-left text-2xl font-semibold">COMPFEST</h4>
+                  <ExperienceCard href="https://www.compfest.id/" img="/experience/compfest.svg" title="COMPFEST" role="Manager of IT Development" time="2021 - Present">
                     <h5 className="text-md italic">Manager of IT Development</h5>
                     <h5 className="text-md italic">2021 - Present</h5>
                     {/* <ul className="mt-2 list-disc list-inside">
@@ -343,28 +342,23 @@ const Home: NextPage = () => {
                       <li>To be added.</li>
                     </ul>
                   </ExperienceCard>
-                  
-                  <ExperienceCard href="http://betis.cs.ui.ac.id/">
-                    <h4 className="text-left text-2xl font-semibold">Betis Fasilkom UI 2022</h4>
+                  <ExperienceCard href="http://betis.cs.ui.ac.id/" img="/experience/betis.svg" title="Betis Fasilkom UI" role="VPIC Of Web Development" time="2021 - Present">
                     <h5 className="text-md italic">VPIC of Web Development</h5>
                     <h5 className="text-md italic">2021 - Present</h5>
                     {/* <ul className="mt-2 list-disc list-inside">
                       <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
                     </ul> */}
                   </ExperienceCard>
-
-                  <ExperienceCard href="https://bem.cs.ui.ac.id/">
-                    <h4 className="text-left text-2xl font-semibold">BEM Fakultas Ilmu Komputer</h4>
+                  <ExperienceCard href="https://bem.cs.ui.ac.id/" img="/experience/bem.png" title="BEM Fakultas Ilmu Komputer" role="Staff of Project Development" time="2021 - Present">
                     <h5 className="text-md italic">Staff of Project Development</h5>
                     <h5 className="text-md italic">2021 - Present</h5>
                     <ul className="mt-2 list-disc list-inside">
                       <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
                     </ul>
                   </ExperienceCard>
-
-                  <ExperienceCard href="https://perak.cs.ui.ac.id/">
-                    <h4 className="text-left text-2xl font-semibold">Pesta Rakyat Komputer</h4>
-                    <h5 className="text-md italic">Front-end Web Developer &nbsp;&bull;&nbsp; 2021</h5>
+                  <ExperienceCard href="https://perak.cs.ui.ac.id/" img="/experience/perak.svg" title="Pesta Rakyat Komputer" role="Front-end Web Developer" time="2021">
+                    <h5 className="text-md italic">Front-end Web Developer</h5>
+                    <h5 className="text-md italic">2021</h5>
                     <ul className="mt-2 list-disc list-inside">
                       <li>Developed a responsive and interactive Cafeteria-Map, Games-Map, TypeRacer, and Registration Confirmation page using React.JS, styled-components, and ContextAPI.</li>
                       <li>Fetched data from a back-end server using Axios and displayed it to the user.</li>

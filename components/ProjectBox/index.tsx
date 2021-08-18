@@ -109,7 +109,7 @@ const ProjectBox:React.FC<ProjectBoxProps> = ({ children, imgSrc, href, title, s
                                     </div>
                                 </div>
 
-                                <div className={`${cursorStatus[status]} mt-2`}>
+                                <div className={`${cursorStatus[status]} mt-2 space-y-1.5`}>
                                     <a href={href} rel="noreferrer" target="_blank" className={`${status === "available" ? "" : "pointer-events-none"}`}>
                                         <button
                                             type="button"
@@ -118,6 +118,13 @@ const ProjectBox:React.FC<ProjectBoxProps> = ({ children, imgSrc, href, title, s
                                             {status === "available" ? "Live Demo" : "Website Is Now Defunct"}
                                         </button>
                                     </a>
+                                    <button
+                                        type="button"
+                                        className="w-full inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Close
+                                    </button>
                                 </div>
                             </div>
                         </Transition.Child>
