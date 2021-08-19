@@ -248,13 +248,13 @@ const Home: NextPage = () => {
             <div className="flex items-center space-x-5 mt-2.5">
               {Social && Social.map((data) => {
                 return (
-                  <SocialItem href={data.href} src={data.src} alt={data.alt} />
+                  <SocialItem key={data.alt} href={data.href} src={data.src} alt={data.alt} />
                 )
               })}
             </div>
             <button className="mt-8 bg-white rounded-md w-5/6 lg:w-2/6 h-12 font-semibold flex items-center justify-center">
               <div className="flex flex-row space-x-1 items-center justify-center">
-                <img src="/logo/download.svg" />
+                <img src="/logo/download.svg" alt="download" />
                 <p>Download CV</p>
               </div>
             </button>
@@ -409,7 +409,7 @@ const Home: NextPage = () => {
             >
                 {Skill && Skill.map((data) => {
                   return (
-                    <SkillItem href={data.href} src={data.src} alt={data.alt} />
+                    <SkillItem key={data.alt} href={data.href} src={data.src} alt={data.alt} />
                   )
                 })}
             </motion.div>

@@ -26,7 +26,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ href, imgSrc, title, ro
                 <li>Fetched data from a back-end server using Axios and displayed it to the user.</li> */}
                 {short && short.map((data) => {
                     return (
-                        <li>{data}</li>
+                        <li key={data}>{data}</li>
                     )
                 })}
             </ul>
