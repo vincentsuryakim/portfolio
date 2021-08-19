@@ -1,16 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import Head from 'next/head';
 
 import { Typewriter } from "react-simple-typewriter";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 import Layout from "../components/Layout";
 import ExperienceCard from '../components/ExperienceCard';
 import ProjectBox from '../components/ProjectBox';
+import ScrollToTop from '../components/ScrollToTop';
+import SkillItem from '../components/SkillItem';
+import SocialItem from '../components/SocialItem';
+
+import { Social } from '../data/social';
+import { Skill } from '../data/skill';
+import { downVariants, popUpVariants, rightVariants, showVariants, upVariants } from '../data/animationVariants';
 
 const Home: NextPage = () => {
+  const [profileHovering, setProfileHovering] = useState<boolean>(false)
+
   const [scrollVisible, setScrollVisible] = useState<boolean>(false);
 
   const [previousScrollMotionNum, setPreviousScrollMotionNum] = useState<number>(0);
@@ -28,7 +37,6 @@ const Home: NextPage = () => {
 
   const logScroll = () => {
     const aboutMeData = aboutMeRef.current!.getBoundingClientRect();
-
 
     if (window.pageYOffset > aboutMeData.bottom + 25) {
       setScrollVisible(true);
@@ -61,6 +69,116 @@ const Home: NextPage = () => {
     setLocContactMe(window.pageYOffset + contactMeRef.current!.getBoundingClientRect().top);
   }, [])
 
+  const controlsWhoAmITitle = useAnimation();
+  const { ref:whoAmIRef, inView:whoAmIInView } = useInView();
+  useEffect(() => {
+    if (whoAmIInView) {
+      controlsWhoAmITitle.start('up');
+    }
+    if (!whoAmIInView) {
+      controlsWhoAmITitle.start('down');
+    }
+  }, [controlsWhoAmITitle, whoAmIInView]);
+
+  const controlsWhoAmIContent = useAnimation();
+  const { ref:whoAmIContentRef, inView:whoAmIContentInView } = useInView();
+  useEffect(() => {
+    if (whoAmIContentInView) {
+      controlsWhoAmIContent.start('show');
+    }
+    if (!whoAmIContentInView) {
+      controlsWhoAmIContent.start('hidden');
+    }
+  }, [controlsWhoAmIContent, whoAmIContentInView]);
+
+  const controlsExperienceTitle = useAnimation();
+  const { ref:experienceTitleRef, inView:experienceTitleInView } = useInView();
+  useEffect(() => {
+    if (experienceTitleInView) {
+      controlsExperienceTitle.start('up');
+    }
+    if (!experienceTitleInView) {
+      controlsExperienceTitle.start('down');
+    }
+  }, [controlsExperienceTitle, experienceTitleInView]);
+
+  const controlsExperienceContent = useAnimation();
+  const { ref:experienceContentRef, inView:experienceContentInView } = useInView();
+  useEffect(() => {
+    if (experienceContentInView) {
+      controlsExperienceContent.start('down');
+    }
+    if (!experienceContentInView) {
+      controlsExperienceContent.start('up');
+    }
+  }, [controlsExperienceContent, experienceContentInView]);
+
+  const controlsEducationTitle = useAnimation();
+  const { ref:educationTitleRef, inView:educationTitleInView } = useInView();
+  useEffect(() => {
+    if (educationTitleInView) {
+      controlsEducationTitle.start('up');
+    }
+    if (!educationTitleInView) {
+      controlsEducationTitle.start('down');
+    }
+  }, [controlsEducationTitle, educationTitleInView]);
+
+  const controlsEducationContent = useAnimation();
+  const { ref:educationContentRef, inView:educationContentInView } = useInView();
+  useEffect(() => {
+    if (educationContentInView) {
+      controlsEducationContent.start('right');
+    }
+    if (!educationContentInView) {
+      controlsEducationContent.start('left');
+    }
+  }, [controlsEducationContent, educationContentInView]);
+
+  const controlsSkillsTitle = useAnimation();
+  const { ref:skillsTitleRef, inView:skillsTitleInView } = useInView();
+  useEffect(() => {
+    if (skillsTitleInView) {
+      controlsSkillsTitle.start('up');
+    }
+    if (!skillsTitleInView) {
+      controlsSkillsTitle.start('down');
+    }
+  }, [controlsSkillsTitle, skillsTitleInView]);
+
+  const controlsSkillsContent = useAnimation();
+  const { ref:skillsContentRef, inView:skillsContentInView } = useInView();
+  useEffect(() => {
+    if (skillsContentInView) {
+      controlsSkillsContent.start('popped');
+    }
+    if (!skillsContentInView) {
+      controlsSkillsContent.start('small');
+    }
+  }, [controlsSkillsContent, skillsContentInView]);
+
+  const controlsProjectsTitle = useAnimation();
+  const { ref:projectsTitleRef, inView:projectsTitleInView } = useInView();
+  useEffect(() => {
+    if (projectsTitleInView) {
+      controlsProjectsTitle.start('show');
+    }
+    if (!projectsTitleInView) {
+      controlsProjectsTitle.start('hidden');
+    }
+  }, [controlsProjectsTitle, projectsTitleInView]);
+
+  const controlsProjectsContent = useAnimation();
+  const { ref:projectsContentRef, inView:projectsContentInView } = useInView();
+  useEffect(() => {
+    if (projectsContentInView) {
+      controlsProjectsContent.start('popped');
+    }
+    if (!projectsContentInView) {
+      controlsProjectsContent.start('small');
+    }
+  }, [controlsProjectsContent, projectsContentInView]);
+
   return (
     <>
     <Head>
@@ -92,34 +210,47 @@ const Home: NextPage = () => {
         <div className="pt-12 pb-12 w-full bg-black block lg:flex" ref={aboutMeRef}>
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
-              <h3 className="text-5xl text-center lg:text-right font-bold text-white lg:pr-4 sticky top-12">Who Am I</h3>
+              <motion.h3
+                className="text-5xl text-center lg:text-right font-bold text-white lg:pr-4 sticky top-12"
+                ref={whoAmIRef}
+                initial="up"
+                animate={controlsWhoAmITitle}
+                variants={upVariants}
+              >Who Am I</motion.h3>
             </div>
           </div>
-          <div className="w-full lg:w-4/6 mt-12 lg:mt-0 flex flex-col items-center">
-            <img className="rounded-full w-48 h-48" src="profile.jpg" alt="profilephoto" />
+          <motion.div
+            className="w-full lg:w-4/6 mt-12 lg:mt-0 flex flex-col items-center"
+            ref={whoAmIContentRef}
+            initial="hidden"
+            animate={controlsWhoAmIContent}
+            variants={showVariants}
+          >
+            <motion.img
+              className="rounded-full w-48"
+              src="profile.jpg"
+              alt="profilephoto"
+              onHoverStart={() => setProfileHovering(true)}
+              onHoverEnd={() => setProfileHovering(false)}
+              variants={{
+                basic: { borderRadius: "50%"},
+                whileHovering: {
+                  borderRadius: "20%",
+                  transition: {
+                    duration: 0.1,
+                  }
+                }
+              }}
+              animate={profileHovering ? "whileHovering" : "basic"}
+            />
             <p className="text-center mt-8 text-lg text-white px-4 lg:px-32">Hello! My name is Vincent, and I’m a computer science student at the University of Indonesia. I have a passion for Data Science, Artificial Intelligence, and Web Development. I am dedicated, motivated, highly inspired, and ready to adapt and overcome any obstacles!</p>
             <p className="text-center mt-8 text-lg text-white">Feel free to connect with me via</p>
             <div className="flex items-center space-x-5 mt-2.5">
-              <a href="https://www.linkedin.com/in/vincent-suryakim-70a80a1b6" rel="noreferrer" target="_blank">
-                <div className="h-7 w-7 relative">
-                  <Image src="/social/linkedin.png" alt="linkedin" layout="fill" />
-                </div>
-              </a>
-              <a href="https://github.com/vincentsuryakim" rel="noreferrer" target="_blank">
-                <div className="h-7 w-7 relative">
-                  <Image src="/social/github.png" alt="github" layout="fill" />
-                </div>
-              </a>
-              <a href="https://www.instagram.com/vincentsuryakim/" rel="noreferrer" target="_blank">
-                <div className="h-7 w-7 relative">
-                  <Image src="/social/instagram.png" alt="instagram" layout="fill" />
-                </div>
-              </a>
-              <a href="https://gitlab.com/vincent.suryakim" rel="noreferrer" target="_blank">
-                <div className="h-7 w-7 relative">
-                  <Image src="/social/gitlab.png" alt="gitlab" layout="fill" />
-                </div>
-              </a>
+              {Social && Social.map((data) => {
+                return (
+                  <SocialItem href={data.href} src={data.src} alt={data.alt} />
+                )
+              })}
             </div>
             <button className="mt-8 bg-white rounded-md w-5/6 lg:w-2/6 h-12 font-semibold flex items-center justify-center">
               <div className="flex flex-row space-x-1 items-center justify-center">
@@ -127,23 +258,99 @@ const Home: NextPage = () => {
                 <p>Download CV</p>
               </div>
             </button>
-          </div>
+          </motion.div>
         </div>
 
         {/* Experience */}
         <div className="mt-24 w-full block lg:flex" ref={resumeRef}>
           <div className=" w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
-              <h3 className="text-5xl text-right font-bold lg:pr-4 sticky top-12">Experience</h3>
+              <motion.h3
+                className="text-5xl text-right font-bold lg:pr-4 sticky top-12"
+                ref={experienceTitleRef}
+                initial="up"
+                animate={controlsExperienceTitle}
+                variants={upVariants}
+              >Experience</motion.h3>
             </div>
           </div>
           <div className="w-full lg:w-4/6 mt-12 lg:mt-0 flex flex-col items-center px-6 lg:px-16">
-            <div className="w-full space-y-6">
-              <ExperienceCard imgSrc="/experience/compfest.svg" title="COMPFEST" role="Manager of IT Development" time="2021 - Present" />
-              <ExperienceCard imgSrc="/experience/betis.svg" title="BETIS Fasilkom UI" role="VPIC of Web Development" time="2021 - Present" />
-              <ExperienceCard imgSrc="/experience/bem.svg" title="BEM Fakultas Ilmu Komputer" role="Staff of Project Development" time="2021 - Present" />
-              <ExperienceCard imgSrc="/experience/perak.svg" title="Pesta Rakyat Komputer" role="Front-end Web Developer" time="2021" />
-            </div>
+            <motion.div
+              className="w-full space-y-6"
+              ref={experienceContentRef}
+              initial="up"
+              animate={controlsExperienceContent}
+              variants={downVariants}
+            >
+              <ExperienceCard
+                href="https://www.compfest.id/"
+                imgSrc="/experience/compfest.svg"
+                title="COMPFEST"
+                role="Manager of IT Development"
+                time="2021 - Present"
+                short={[
+                  "To be added",
+                ]}
+              >
+                <h5 className="text-md italic">Manager of IT Development</h5>
+                <h5 className="text-md italic">2021 - Present</h5>
+                {/* <ul className="mt-2 list-disc list-inside">
+                  <li>Information about being Manager of IT Development</li>
+                </ul> */}
+                <h5 className="text-md italic border-t-[1px] border-gray-300 mt-2 pt-2">Software Engineer</h5>
+                <h5 className="text-md italic">2021</h5>
+                <ul className="mt-2 list-disc list-inside">
+                  <li>To be added.</li>
+                </ul>
+              </ExperienceCard>
+              <ExperienceCard
+                href="http://betis.cs.ui.ac.id/"
+                imgSrc="/experience/betis.svg"
+                title="BETIS Fasilkom UI"
+                role="VPIC of Web Development"
+                time="2021 - Present"
+              >
+                <h5 className="text-md italic">VPIC of Web Development</h5>
+                <h5 className="text-md italic">2021 - Present</h5>
+                {/* <ul className="mt-2 list-disc list-inside">
+                  <li>Information about being VPIC of Web Development</li>
+                </ul> */}
+              </ExperienceCard>
+              <ExperienceCard
+                href="https://bem.cs.ui.ac.id/"
+                imgSrc="/experience/bem.svg"
+                title="BEM Fakultas Ilmu Komputer"
+                role="Staff of Project Development"
+                time="2021 - Present"
+                short={[
+                  "Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies."
+                ]}
+              >
+                <h5 className="text-md italic">Staff of Project Development</h5>
+                <h5 className="text-md italic">2021 - Present</h5>
+                <ul className="mt-2 list-disc list-inside">
+                  <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
+                </ul>
+              </ExperienceCard>
+              <ExperienceCard
+                href="https://perak.cs.ui.ac.id/"
+                imgSrc="/experience/perak.svg"
+                title="Pesta Rakyat Komputer"
+                role="Front-end Web Developer"
+                time="2021"
+                short={[
+                  "Developed a responsive and interactive Cafeteria-Map, Games-Map, TypeRacer, and Registration Confirmation page using React.JS, styled-components, and ContextAPI.",
+                  "Fetched data from a back-end server using Axios and displayed it to the user."
+                ]}
+              >
+                <h5 className="text-md italic">Front-end Web Developer</h5>
+                <h5 className="text-md italic">2021</h5>
+                <ul className="mt-2 list-disc list-inside">
+                  <li>Developed a responsive and interactive Cafeteria-Map, Games-Map, TypeRacer, and Registration Confirmation page using React.JS, styled-components, and ContextAPI.</li>
+                  <li>Fetched data from a back-end server using Axios and displayed it to the user.</li>
+                </ul>
+              </ExperienceCard>
+            </motion.div>
           </div>
         </div>
 
@@ -151,10 +358,22 @@ const Home: NextPage = () => {
         <div className="mt-36 lg:mt-24 w-full block lg:flex">
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
-              <h3 className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-12">Education</h3>
+              <motion.h3
+                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-12"
+                ref={educationTitleRef}
+                initial="up"
+                animate={controlsEducationTitle}
+                variants={upVariants}
+              >Education</motion.h3>
             </div>
           </div>
-          <div className="mt-10 lg:mt-0 w-full lg:w-4/6 px-6 lg:px-16">
+          <motion.div
+            className="mt-10 lg:mt-0 w-full lg:w-4/6 px-6 lg:px-16"
+            ref={educationContentRef}
+            initial="left"
+            animate={controlsEducationContent}
+            variants={rightVariants}
+          >
               <h4 className="text-left text-2xl font-semibold">Universitas Indonesia</h4>
               <h5 className="text-md italic">Bachelor of Computer Science &nbsp;&bull;&nbsp; 2020 - 2024</h5>
               <ul className="mt-2 list-disc list-inside">
@@ -164,76 +383,55 @@ const Home: NextPage = () => {
 
               <h4 className="text-left text-2xl font-semibold mt-9">SMAK 1 Penabur Jakarta</h4>
               <h5 className="text-md italic">High School Diploma, Natural Sciences &nbsp;&bull;&nbsp; 2017 - 2020</h5>
-          </div>
+          </motion.div>
         </div>
 
         {/* Skills */}
         <div className="mt-36 lg:mt-24 w-full block lg:flex">
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
-              <h3 className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-12">Skills</h3>
+              <motion.h3
+                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-12"
+                ref={skillsTitleRef}
+                initial="up"
+                animate={controlsSkillsTitle}
+                variants={upVariants}
+              >Skills</motion.h3>
             </div>
           </div>
           <div className="w-full lg:w-4/6 px-6 lg:px-16 mt-12 lg:mt-0 flex justify-center lg:justify-start">
-            <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-5 gap-14">
-                <a href="https://www.python.org/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/python.png" alt="Python" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://www.java.com/en/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/java.png" alt="Java" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://nextjs.org/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/nextjs.png" alt="NextJS" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://reactjs.org/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/react.png" alt="ReactJS" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/tailwind.png" alt="TailwindCSS" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://hasura.io/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/hasura.png" alt="Hasura" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://www.typescriptlang.org/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/typescript.png" alt="TypeScript" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://www.docker.com/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/docker.png" alt="Docker" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://git-scm.com/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/git.png" alt="Git" layout="fill" />
-                  </div>
-                </a>
-                <a href="https://nodejs.org/en/" rel="noreferrer" target="_blank">
-                  <div className="relative h-20 w-20">
-                    <Image src="/skills/nodejs.png" alt="NodeJS" layout="fill" />
-                  </div>
-                </a>
-            </div>
+            <motion.div
+              className="grid grid-flow-row grid-cols-2 lg:grid-cols-5 gap-14"
+              ref={skillsContentRef}
+              initial="small"
+              animate={controlsSkillsContent}
+              variants={popUpVariants}
+            >
+                {Skill && Skill.map((data) => {
+                  return (
+                    <SkillItem href={data.href} src={data.src} alt={data.alt} />
+                  )
+                })}
+            </motion.div>
           </div>
         </div>
 
         {/* Projects */}
         <div className="pt-16 pb-16 mt-24 w-full flex flex-col items-center justify-center bg-gray-100 min-h-[90vh]" ref={projectsRef}>
-          <h3 className="text-5xl font-bold text-black">Projects</h3>
-          <div className="mt-12 grid grid-flow-row grid-cols-2 lg:grid-cols-3">
+          <motion.h3
+            className="text-5xl font-bold text-black"
+            ref={projectsTitleRef}
+            initial="hidden"
+            animate={controlsProjectsTitle}
+            variants={showVariants}
+          >Projects</motion.h3>
+          <motion.div
+            className="mt-12 grid grid-flow-row grid-cols-2 lg:grid-cols-3"
+            ref={projectsContentRef}
+            initial="small"
+            animate={controlsProjectsContent}
+            variants={popUpVariants}
+          >
               <ProjectBox status="defunct" imgSrc="/projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia" techs={["ReactJS", "Apollo", "styled-components"]}>
                 <p className="mb-2">Recruitment task for COMPFEST13&apos;s Software Engineering Team</p>
                 <ul className="list-disc list-inside">
@@ -252,7 +450,7 @@ const Home: NextPage = () => {
                   <li>Deployed website to a linux server using Route 53 and NGINX.</li>
                 </ul>
               </ProjectBox>
-          </div>
+          </motion.div>
         </div>
 
         {/* Contact Me */}
@@ -270,19 +468,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* Scroll to Top */}
-        <AnimatePresence>
-          {scrollVisible &&
-              <motion.div
-                className="fixed bottom-5 right-5 rounded-full bg-black shadow-2xl w-14 h-14 flex items-center justify-center cursor-pointer"
-                onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <p className="text-2xl text-white">↑</p>
-              </motion.div>
-          }
-        </AnimatePresence>
+        <ScrollToTop scrollVisible={scrollVisible} />
     </Layout>
     </>
   )
