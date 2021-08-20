@@ -6,21 +6,13 @@ import { IoMdMenu } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 import zenScroll from "zenscroll";
 
-export interface NavbarProps {
-  locAboutMe: number;
-  locResume: number;
-  locProjects: number;
-  locContactMe: number;
-  scrollMotionData: string;
-}
+import { useLocationContext } from "../../contexts/LocationProvider";
 
-const Navbar: React.FC<NavbarProps> = ({
-  locAboutMe,
-  locResume,
-  locProjects,
-  locContactMe,
-  scrollMotionData,
-}) => {
+export interface NavbarProps {}
+
+const Navbar: React.FC<NavbarProps> = () => {
+  const { locAboutMe, locResume, locProjects, locContactMe, scrollMotionData } = useLocationContext();
+
   return (
     <AnimatePresence>
       {scrollMotionData === "up" && (

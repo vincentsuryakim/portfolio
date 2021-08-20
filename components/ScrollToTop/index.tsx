@@ -3,9 +3,12 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import zenScroll from "zenscroll"
 
-export interface ScrollToTopProps { scrollVisible: boolean }
+import { useLocationContext } from "../../contexts/LocationProvider";
 
-const ScrollToTop:React.FC<ScrollToTopProps> = ({ scrollVisible }) => {
+export interface ScrollToTopProps {}
+
+const ScrollToTop:React.FC<ScrollToTopProps> = () => {
+  const { scrollVisible } = useLocationContext();
     return (
         <AnimatePresence>
           {scrollVisible &&

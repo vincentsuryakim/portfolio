@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
 import { Typewriter } from "react-simple-typewriter";
 import { motion, useAnimation } from 'framer-motion'
@@ -17,23 +16,19 @@ import { Social } from '../data/social';
 import { Skill } from '../data/skill';
 import { downVariants, popUpVariants, rightVariants, showVariants, upVariants } from '../data/animationVariants';
 
+import { useLocationContext } from '../contexts/LocationProvider';
+
 const Home: NextPage = () => {
+  const { setLocAboutMe, setLocResume, setLocProjects, setLocContactMe, setScrollVisible, setScrollMotionData } = useLocationContext();
+
   const [profileHovering, setProfileHovering] = useState<boolean>(false)
 
-  const [scrollVisible, setScrollVisible] = useState<boolean>(false);
-
   const [previousScrollMotionNum, setPreviousScrollMotionNum] = useState<number>(0);
-  const [scrollMotionData, setScrollMotionData] = useState<string>("up");
 
   const aboutMeRef = useRef<HTMLDivElement|null>(null);
   const resumeRef = useRef<HTMLDivElement|null>(null);
   const projectsRef = useRef<HTMLDivElement|null>(null);
   const contactMeRef = useRef<HTMLDivElement|null>(null);
-
-  const [locAboutMe, setLocAboutMe] = useState<number>(0);
-  const [locResume, setLocResume] = useState<number>(0);
-  const [locProjects, setLocProjects] = useState<number>(0);
-  const [locContactMe, setLocContactMe] = useState<number>(0);
 
   const logScroll = () => {
     const aboutMeData = aboutMeRef.current!.getBoundingClientRect();
@@ -180,14 +175,7 @@ const Home: NextPage = () => {
   }, [controlsProjectsContent, projectsContentInView]);
 
   return (
-    <>
-    <Head>
-      <title>Vincent&apos;s Portfolio</title>
-      <meta charSet="UTF-8" />
-      <meta name="description" content="Portfolio of Vincent Suryakim" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <Layout locAboutMe={locAboutMe} locResume={locResume} locProjects={locProjects} locContactMe={locContactMe} scrollMotionData={scrollMotionData}>
+    <Layout>
 
         {/* Hero */}
         <div className="relative w-full h-screen max-h-[-webkit-fill-available] flex items-center justify-center flex-col">
@@ -472,9 +460,8 @@ const Home: NextPage = () => {
         </div>
 
         {/* Scroll to Top */}
-        <ScrollToTop scrollVisible={scrollVisible} />
+        <ScrollToTop />
     </Layout>
-    </>
   )
 }
 

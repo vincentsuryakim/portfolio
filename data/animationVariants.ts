@@ -54,3 +54,23 @@ export const rightVariants = {
     },
   },
 };
+
+export const showHoverVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+      opacity: 1,
+      transition: {
+          duration: 0.1,
+      }
+  }
+}
+
+export const backgroundVariants = {
+  visible: { opacity: 1},
+  opaque: {
+      opacity: 0.5,
+      transition: {
+          duration: 0.1
+      }
+  }
+}
