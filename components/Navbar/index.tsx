@@ -11,7 +11,8 @@ import { useLocationContext } from "../../contexts/LocationProvider";
 export interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
-  const { locAboutMe, locResume, locProjects, locContactMe, scrollMotionData } = useLocationContext();
+  const { aboutMeRef, resumeRef, projectsRef, contactMeRef, scrollMotionData } =
+    useLocationContext();
 
   return (
     <AnimatePresence>
@@ -29,33 +30,25 @@ const Navbar: React.FC<NavbarProps> = () => {
             <div className="mr-10 font-semibold hidden sm:flex flex-row space-x-8">
               <p
                 className="cursor-pointer"
-                onClick={() =>
-                  zenScroll.toY(locAboutMe)
-                }
+                onClick={() => zenScroll.center(aboutMeRef.current!)}
               >
                 About Me
               </p>
               <p
                 className="cursor-pointer"
-                onClick={() =>
-                  zenScroll.toY(locResume)
-                }
+                onClick={() => zenScroll.to(resumeRef.current!)}
               >
                 Resume
               </p>
               <p
                 className="cursor-pointer"
-                onClick={() =>
-                  zenScroll.toY(locProjects)
-                }
+                onClick={() => zenScroll.center(projectsRef.current!)}
               >
                 Projects
               </p>
               <p
                 className="cursor-pointer"
-                onClick={() =>
-                  zenScroll.toY(locContactMe)
-                }
+                onClick={() => zenScroll.center(contactMeRef.current!)}
               >
                 Contact Me
               </p>
@@ -80,9 +73,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     <Menu.Item>
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
-                        onClick={() =>
-                          zenScroll.toY(locAboutMe)
-                        }
+                        onClick={() => zenScroll.center(aboutMeRef.current!)}
                       >
                         About Me
                       </button>
@@ -90,9 +81,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     <Menu.Item>
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
-                        onClick={() =>
-                          zenScroll.toY(locResume)
-                        }
+                        onClick={() => zenScroll.to(resumeRef.current!)}
                       >
                         Resume
                       </button>
@@ -100,9 +89,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     <Menu.Item>
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
-                        onClick={() =>
-                          zenScroll.toY(locProjects)
-                        }
+                        onClick={() => zenScroll.center(projectsRef.current!)}
                       >
                         Projects
                       </button>
@@ -110,9 +97,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     <Menu.Item>
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
-                        onClick={() =>
-                          zenScroll.toY(locContactMe)
-                        }
+                        onClick={() => zenScroll.center(contactMeRef.current!)}
                       >
                         Contact Me
                       </button>

@@ -2,19 +2,17 @@ import {
   createContext,
   useContext,
   useState,
+  useRef,
   Dispatch,
   SetStateAction,
+  MutableRefObject,
 } from "react";
 
 interface LocationContextValue {
-  locAboutMe: number;
-  setLocAboutMe: Dispatch<SetStateAction<number>>;
-  locResume: number;
-  setLocResume: Dispatch<SetStateAction<number>>;
-  locProjects: number;
-  setLocProjects: Dispatch<SetStateAction<number>>;
-  locContactMe: number;
-  setLocContactMe: Dispatch<SetStateAction<number>>;
+  aboutMeRef: MutableRefObject<HTMLDivElement | null>;
+  resumeRef: MutableRefObject<HTMLDivElement | null>;
+  projectsRef: MutableRefObject<HTMLDivElement | null>;
+  contactMeRef: MutableRefObject<HTMLDivElement | null>;
   scrollVisible: boolean;
   setScrollVisible: Dispatch<SetStateAction<boolean>>;
   scrollMotionData: string;
@@ -30,24 +28,20 @@ export interface LocationProviderProps {}
 export const LocationProvider: React.FC<LocationProviderProps> = ({
   children,
 }) => {
-  const [locAboutMe, setLocAboutMe] = useState<number>(0);
-  const [locResume, setLocResume] = useState<number>(0);
-  const [locProjects, setLocProjects] = useState<number>(0);
-  const [locContactMe, setLocContactMe] = useState<number>(0);
+  const aboutMeRef = useRef<HTMLDivElement | null>(null);
+  const resumeRef = useRef<HTMLDivElement | null>(null);
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+  const contactMeRef = useRef<HTMLDivElement | null>(null);
 
   const [scrollVisible, setScrollVisible] = useState<boolean>(false);
 
   const [scrollMotionData, setScrollMotionData] = useState<string>("up");
 
   const value = {
-    locAboutMe,
-    setLocAboutMe,
-    locResume,
-    setLocResume,
-    locProjects,
-    setLocProjects,
-    locContactMe,
-    setLocContactMe,
+    aboutMeRef,
+    resumeRef,
+    projectsRef,
+    contactMeRef,
     scrollVisible,
     setScrollVisible,
     scrollMotionData,
@@ -64,9 +58,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({
 export const useLocationContext = () => {
   const context = useContext(LocationContext);
   if (context === undefined) {
-    throw Error(
-      "Error using Location Context"
-    );
+    throw Error("Error using Location Context");
   } else {
     return context;
   }

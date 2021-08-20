@@ -19,16 +19,11 @@ import { downVariants, popUpVariants, rightVariants, showVariants, upVariants } 
 import { useLocationContext } from '../contexts/LocationProvider';
 
 const Home: NextPage = () => {
-  const { setLocAboutMe, setLocResume, setLocProjects, setLocContactMe, setScrollVisible, setScrollMotionData } = useLocationContext();
+  const { aboutMeRef, resumeRef, projectsRef, contactMeRef, setScrollVisible, setScrollMotionData } = useLocationContext();
 
   const [profileHovering, setProfileHovering] = useState<boolean>(false)
 
   const [previousScrollMotionNum, setPreviousScrollMotionNum] = useState<number>(0);
-
-  const aboutMeRef = useRef<HTMLDivElement|null>(null);
-  const resumeRef = useRef<HTMLDivElement|null>(null);
-  const projectsRef = useRef<HTMLDivElement|null>(null);
-  const contactMeRef = useRef<HTMLDivElement|null>(null);
 
   const logScroll = () => {
     const aboutMeData = aboutMeRef.current!.getBoundingClientRect();
@@ -56,13 +51,6 @@ const Home: NextPage = () => {
       window.removeEventListener("scroll", logScroll);
     };
   });
-
-  useEffect(() => {
-    setLocAboutMe(window.pageYOffset + aboutMeRef.current!.getBoundingClientRect().top);
-    setLocResume(window.pageYOffset + resumeRef.current!.getBoundingClientRect().top - 30);
-    setLocProjects(window.pageYOffset + projectsRef.current!.getBoundingClientRect().top);
-    setLocContactMe(window.pageYOffset + contactMeRef.current!.getBoundingClientRect().top);
-  }, [])
 
   const controlsWhoAmITitle = useAnimation();
   const { ref:whoAmIRef, inView:whoAmIInView } = useInView();
