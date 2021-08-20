@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Menu, Transition } from "@headlessui/react";
 import { IoMdMenu } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
+import zenScroll from "zenscroll";
 
 export interface NavbarProps {
   locAboutMe: number;
@@ -37,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <p
                 className="cursor-pointer"
                 onClick={() =>
-                  window.scroll({ top: locAboutMe, behavior: "smooth" })
+                  zenScroll.toY(locAboutMe)
                 }
               >
                 About Me
@@ -45,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <p
                 className="cursor-pointer"
                 onClick={() =>
-                  window.scroll({ top: locResume, behavior: "smooth" })
+                  zenScroll.toY(locResume)
                 }
               >
                 Resume
@@ -53,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <p
                 className="cursor-pointer"
                 onClick={() =>
-                  window.scroll({ top: locProjects, behavior: "smooth" })
+                  zenScroll.toY(locProjects)
                 }
               >
                 Projects
@@ -61,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <p
                 className="cursor-pointer"
                 onClick={() =>
-                  window.scroll({ top: locContactMe, behavior: "smooth" })
+                  zenScroll.toY(locContactMe)
                 }
               >
                 Contact Me
@@ -88,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
                         onClick={() =>
-                          window.scroll({ top: locAboutMe, behavior: "smooth" })
+                          zenScroll.toY(locAboutMe)
                         }
                       >
                         About Me
@@ -98,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
                         onClick={() =>
-                          window.scroll({ top: locResume, behavior: "smooth" })
+                          zenScroll.toY(locResume)
                         }
                       >
                         Resume
@@ -108,10 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
                         onClick={() =>
-                          window.scroll({
-                            top: locProjects,
-                            behavior: "smooth",
-                          })
+                          zenScroll.toY(locProjects)
                         }
                       >
                         Projects
@@ -121,10 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({
                       <button
                         className="text-gray-900 group flex rounded-md items-center w-full px-2 py-2 text-sm"
                         onClick={() =>
-                          window.scroll({
-                            top: locContactMe,
-                            behavior: "smooth",
-                          })
+                          zenScroll.toY(locContactMe)
                         }
                       >
                         Contact Me
