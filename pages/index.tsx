@@ -211,7 +211,7 @@ const Home: NextPage = () => {
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-center lg:text-right font-bold text-white lg:pr-4 sticky top-20"
+                className="text-5xl text-center lg:text-right font-bold text-white lg:pr-4 static lg:sticky top-20"
                 ref={whoAmIRef}
                 initial="up"
                 animate={controlsWhoAmITitle}
@@ -266,7 +266,7 @@ const Home: NextPage = () => {
           <div className=" w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-right font-bold lg:pr-4 sticky top-20"
+                className="text-5xl text-right font-bold lg:pr-4 static lg:sticky top-20"
                 ref={experienceTitleRef}
                 initial="up"
                 animate={controlsExperienceTitle}
@@ -359,7 +359,7 @@ const Home: NextPage = () => {
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-20"
+                className="text-5xl text-center lg:text-right font-bold lg:pr-4 static lg:sticky top-20"
                 ref={educationTitleRef}
                 initial="up"
                 animate={controlsEducationTitle}
@@ -395,7 +395,7 @@ const Home: NextPage = () => {
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-20"
+                className="text-5xl text-center lg:text-right font-bold lg:pr-4 static lg:sticky top-20"
                 ref={skillsTitleRef}
                 initial="up"
                 animate={controlsSkillsTitle}
@@ -438,18 +438,18 @@ const Home: NextPage = () => {
           >
               <ProjectBox status="defunct" imgSrc="/projects/memepedia.png" href="https://kesegaran-compfest-git-main-vincentsuryakim.vercel.app" title="Memepedia" techs={["ReactJS", "Apollo", "styled-components"]}>
                 <p className="mb-2">Recruitment task for COMPFEST13&apos;s Software Engineering Team</p>
-                <ul className="list-disc list-inside">
+                <ul className="list-disc ml-4">
                     <li>Developed a search engine for memes.</li>
                     <li>Memes can be saved in a web browser with no expiration date using LocalStorage.</li>
                 </ul>
               </ProjectBox>
               <ProjectBox imgSrc="/projects/todolist.png" href="https://todolist-bismit.netlify.app" title="Todo List" techs={["ReactJS", "styled-components"]}>
-                <ul className="list-disc list-inside">
+                <ul className="list-disc ml-4">
                     <li>Tasks are saved in a web browser with no expiration date using LocalStorage.</li>
                 </ul>
               </ProjectBox>
               <ProjectBox imgSrc="/projects/pendekin.png" href="https://sh.webzerver.xyz" title="URL Shortener" techs={["NextJS", "TailwindCSS", "Typescript", "Prisma", "Route 53", "NGINX"]}>
-                <ul className="list-disc list-inside">
+                <ul className="list-disc ml-4">
                   <li>Prisma and SQLite database are saved in the same repository to minimize redirecting delay.</li>
                   <li>Deployed website to a linux server using Route 53 and NGINX.</li>
                 </ul>
