@@ -211,7 +211,7 @@ const Home: NextPage = () => {
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-center lg:text-right font-bold text-white lg:pr-4 sticky top-12"
+                className="text-5xl text-center lg:text-right font-bold text-white lg:pr-4 sticky top-20"
                 ref={whoAmIRef}
                 initial="up"
                 animate={controlsWhoAmITitle}
@@ -266,7 +266,7 @@ const Home: NextPage = () => {
           <div className=" w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-right font-bold lg:pr-4 sticky top-12"
+                className="text-5xl text-right font-bold lg:pr-4 sticky top-20"
                 ref={experienceTitleRef}
                 initial="up"
                 animate={controlsExperienceTitle}
@@ -288,9 +288,9 @@ const Home: NextPage = () => {
                 title="COMPFEST"
                 role="Manager of IT Development"
                 time="2021 - Present"
-                short={[
-                  "To be added",
-                ]}
+                // short={[
+                //   "To be added",
+                // ]}
               >
                 <h5 className="text-md italic">Manager of IT Development</h5>
                 <h5 className="text-md italic">2021 - Present</h5>
@@ -299,9 +299,9 @@ const Home: NextPage = () => {
                 </ul> */}
                 <h5 className="text-md italic border-t-[1px] border-gray-300 mt-2 pt-2">Software Engineer</h5>
                 <h5 className="text-md italic">2021</h5>
-                <ul className="mt-2 list-disc list-inside">
+                {/* <ul className="mt-2 list-disc ml-4">
                   <li>To be added.</li>
-                </ul>
+                </ul> */}
               </ExperienceCard>
               <ExperienceCard
                 href="http://betis.cs.ui.ac.id/"
@@ -312,7 +312,7 @@ const Home: NextPage = () => {
               >
                 <h5 className="text-md italic">VPIC of Web Development</h5>
                 <h5 className="text-md italic">2021 - Present</h5>
-                {/* <ul className="mt-2 list-disc list-inside">
+                {/* <ul className="mt-2 list-disc ml-4">
                   <li>Information about being VPIC of Web Development</li>
                 </ul> */}
               </ExperienceCard>
@@ -328,7 +328,7 @@ const Home: NextPage = () => {
               >
                 <h5 className="text-md italic">Staff of Project Development</h5>
                 <h5 className="text-md italic">2021 - Present</h5>
-                <ul className="mt-2 list-disc list-inside">
+                <ul className="mt-2 list-disc ml-4">
                   <li>Developed the front-end of an e-commerce web application using NextJS, Chakra UI, Axios, ContextAPI, and Nookies.</li>
                 </ul>
               </ExperienceCard>
@@ -345,7 +345,7 @@ const Home: NextPage = () => {
               >
                 <h5 className="text-md italic">Front-end Web Developer</h5>
                 <h5 className="text-md italic">2021</h5>
-                <ul className="mt-2 list-disc list-inside">
+                <ul className="mt-2 list-disc ml-4">
                   <li>Developed a responsive and interactive Cafeteria-Map, Games-Map, TypeRacer, and Registration Confirmation page using React.JS, styled-components, and ContextAPI.</li>
                   <li>Fetched data from a back-end server using Axios and displayed it to the user.</li>
                 </ul>
@@ -359,7 +359,7 @@ const Home: NextPage = () => {
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-12"
+                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-20"
                 ref={educationTitleRef}
                 initial="up"
                 animate={controlsEducationTitle}
@@ -368,21 +368,25 @@ const Home: NextPage = () => {
             </div>
           </div>
           <motion.div
-            className="mt-10 lg:mt-0 w-full lg:w-4/6 px-6 lg:px-16"
+            className="mt-10 lg:mt-0 w-full lg:w-4/6 px-6 lg:px-16 space-y-9"
             ref={educationContentRef}
             initial="left"
             animate={controlsEducationContent}
             variants={rightVariants}
           >
-              <h4 className="text-left text-2xl font-semibold">Universitas Indonesia</h4>
-              <h5 className="text-md italic">Bachelor of Computer Science &nbsp;&bull;&nbsp; 2020 - 2024</h5>
-              <ul className="mt-2 list-disc list-inside">
-                <li>Teaching Assistant for Foundations of Programming 1 in 3<sup>rd</sup> semester</li>
-                <li>Peer Tutor for Introduction to Digital Systems in 2<sup>nd</sup> semester</li>
-              </ul>
-
-              <h4 className="text-left text-2xl font-semibold mt-9">SMAK 1 Penabur Jakarta</h4>
-              <h5 className="text-md italic">High School Diploma, Natural Sciences &nbsp;&bull;&nbsp; 2017 - 2020</h5>
+              <div>
+                <h4 className="text-left text-2xl font-semibold">Universitas Indonesia</h4>
+                <h5 className="text-md italic">Bachelor of Computer Science &nbsp;&bull;&nbsp; 2020 - 2024</h5>
+                <ul className="mt-2 list-disc list-inside">
+                  <li>Teaching Assistant for Foundations of Programming 1 in 3<sup>rd</sup> semester</li>
+                  <li>Peer Tutor for Introduction to Digital Systems in 2<sup>nd</sup> semester</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-left text-2xl font-semibold">SMAK 1 Penabur Jakarta</h4>
+                <h5 className="text-md italic">High School Diploma, Natural Sciences &nbsp;&bull;&nbsp; 2017 - 2020</h5>
+              </div>
           </motion.div>
         </div>
 
@@ -391,7 +395,7 @@ const Home: NextPage = () => {
           <div className="w-full lg:w-2/6 flex justify-center lg:justify-end">
             <div>
               <motion.h3
-                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-12"
+                className="text-5xl text-center lg:text-right font-bold lg:pr-4 sticky top-20"
                 ref={skillsTitleRef}
                 initial="up"
                 animate={controlsSkillsTitle}
