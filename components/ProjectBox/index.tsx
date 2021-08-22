@@ -3,31 +3,13 @@ import { motion } from 'framer-motion'
 import { Dialog, Transition } from '@headlessui/react'
 import Badge from '../Badge';
 
+import { showHoverVariants, backgroundVariants } from '../../data/animationVariants';
+
 export interface ProjectBoxProps { imgSrc:string, href:string, title:string, status?:string, techs:Array<string> }
 
 const ProjectBox:React.FC<ProjectBoxProps> = ({ children, imgSrc, href, title, status = "available", techs }) => {
     const [hovering, setHovering] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
-
-    const showVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.1,
-            }
-        }
-    }
-
-    const backgroundVariants = {
-        visible: { opacity: 1},
-        opaque: {
-            opacity: 0.5,
-            transition: {
-                duration: 0.1
-            }
-        }
-    }
 
     const cursorStatus: {[ id: string ]: string} = {
         available: 'cursor-pointer',
@@ -44,14 +26,14 @@ const ProjectBox:React.FC<ProjectBoxProps> = ({ children, imgSrc, href, title, s
             >
                 <motion.img
                     src={imgSrc}
-                    alt="project"
+                    alt={title}
                     className="absolute"
                     variants={backgroundVariants}
                     animate={hovering ? "opaque" : "visible"}
                 />
                 <motion.p
                     className="text-white text-center absolute w-full h-full flex items-center justify-center font-medium"
-                    variants={showVariants}
+                    variants={showHoverVariants}
                     animate={hovering ? "visible" : "hidden"}
                 >{title}</motion.p>
             </motion.div>
