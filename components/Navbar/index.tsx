@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     <AnimatePresence>
       {scrollMotionData === "up" && (
         <motion.div
-          className="fixed top-0 w-full h-16 z-50 shadow-lg flex justify-center"
+          className="fixed top-0 bg-white w-full h-16 z-50 shadow-lg flex justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.2 } }}
           exit={{ opacity: 0, transition: { duration: 0.2 } }}
