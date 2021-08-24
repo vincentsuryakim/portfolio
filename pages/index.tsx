@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import type { NextPage } from 'next';
 
 import { Typewriter } from "react-simple-typewriter";
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { firebase } from '../firebase/firebaseClient';
 
 import Layout from "../components/Layout";
 import ExperienceCard from '../components/ExperienceCard';
@@ -229,7 +230,7 @@ const Home: NextPage = () => {
               })}
             </div>
             <a href="https://drive.google.com/file/d/1Tvo6GCSyo50ytg7TVai8WcjN-l9YJIPA/view?usp=sharing" className="w-5/6 lg:w-2/6" rel="noreferrer" target="_blank">
-              <button className="mt-8 bg-white rounded-md w-full h-12 font-semibold flex items-center justify-center">
+              <button className="mt-8 bg-white rounded-md w-full h-12 font-semibold flex items-center justify-center" onClick={() => firebase.analytics().logEvent('opened_cv')}>
                 <div className="flex flex-row space-x-1 items-center justify-center">
                   <img src="/logo/download.svg" alt="download" />
                   <p>Download CV</p>
