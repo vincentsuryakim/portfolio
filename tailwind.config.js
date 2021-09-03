@@ -7,7 +7,6 @@ module.exports = {
   },
   variants: {
     extend: {},
-    scrollSnapType: ['responsive'],
   },
   plugins: [],
 }
