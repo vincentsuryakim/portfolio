@@ -1,10 +1,49 @@
-/* Hide scrollbar for Chrome, Safari and Opera */
-.disable-scroll::-webkit-scrollbar {
-  display: none;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-Variable.ttf') format('truetype-variations');
+  font-weight: 300 700;
+  font-style: normal;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.disable-scroll {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-VariableItalic') format('truetype-variations');
+  font-weight: 300 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+* {
+  font-family: 'Satoshi', sans-serif;
+}
+
+body {
+  background-color: rgb(245 245 245 / 1);;
+}
+
+.text-gradient-1 {
+  background: linear-gradient(90deg, rgba(236,0,140,1) 0%, rgba(252,103,103,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
