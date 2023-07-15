@@ -39,10 +39,23 @@
 
 body {
   background-color: rgb(245 245 245 / 1);;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
 }
 
 .text-gradient-1 {
   background: linear-gradient(90deg, rgba(236,0,140,1) 0%, rgba(252,103,103,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-2 {
+  background: linear-gradient(90deg, #A71D31 0%, #3F0D12 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

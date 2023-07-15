@@ -27,7 +27,7 @@ export const EXPERIENCES: ExperiencesType = {
         },
       ],
 
-      skills: [SKILLS.NextJS, SKILLS.TypeScript, SKILLS.TailwindCSS, SKILLS.Firebase, SKILLS.FastAPI, SKILLS.Linux, SKILLS.PostgreSQL, SKILLS.AWS],
+      skills: [SKILLS.NextJS, SKILLS.TypeScript, SKILLS.Firebase, SKILLS.FastAPI, SKILLS.Linux],
     },
     {
       name: "Lncircle",
@@ -273,7 +273,7 @@ export const EXPERIENCES: ExperiencesType = {
         },
       ],
 
-      skills: [SKILLS.Nextjs, SKILLS.BlitzJS, SKILLS.TypeScript, SKILLS.TailwindCSS, SKILLS.FramerMotion, SKILLS.Prisma, SKILLS.Fastify, SKILLS.GraphQL, SKILLS.AWS, SKILLS.Leadership, SKILLS.DecisionMaking, SKILLS.Communication],
+      skills: [SKILLS.BlitzJS, SKILLS.TypeScript, SKILLS.FramerMotion, SKILLS.GraphQL, SKILLS.AWS],
     },
     {
       name: "Pesta Rakyat Komputer",
