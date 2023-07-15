@@ -77,6 +77,30 @@ const Hero: FC = () => {
             height={isMobileBreakpoint ? 24 : 32}
           />
         </a>
+        <a
+          href="https://medium.com/@vincentsuryakim"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icons/medium-neutral.svg"
+            alt="medium"
+            width={isMobileBreakpoint ? 24 : 32}
+            height={isMobileBreakpoint ? 24 : 32}
+          />
+        </a>
+        <a
+          href="mailto:vincentsuryakim@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icons/mail-neutral.svg"
+            alt="mail"
+            width={isMobileBreakpoint ? 24 : 32}
+            height={isMobileBreakpoint ? 24 : 32}
+          />
+        </a>
       </div>
     </div>
   );
