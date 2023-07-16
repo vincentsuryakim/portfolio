@@ -10,6 +10,7 @@
   src: url('/fonts/satoshi/Satoshi-Variable.ttf') format('truetype-variations');
   font-weight: 300 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +18,7 @@
   src: url('/fonts/satoshi/Satoshi-VariableItalic') format('truetype-variations');
   font-weight: 300 700;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -24,6 +26,7 @@
   src: url('/fonts/satoshi/Satoshi-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -31,6 +34,7 @@
   src: url('/fonts/satoshi/Satoshi-BlackItalic.woff') format('woff');
   font-weight: 900;
   font-style: italic;
+  font-display: swap;
 }
 
 * {

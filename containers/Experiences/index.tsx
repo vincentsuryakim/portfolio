@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import { EXPERIENCES } from "@/constants/experience"
-import { ExperiencesType, SingularExperienceType } from "@/constants/experience_types"
+import { ExperiencesType, SingularExperienceType } from "@/constants/experience/types"
 import ExperienceCard from "./ExperienceCard";
 
 const Experiences: FC = () => {

@@ -1,4 +1,4 @@
-import { ExperienceSkill } from "@/constants/experience_types";
+import { ExperienceSkill } from "./types";
 
 export const SKILLS: ExperienceSkill = {
     NextJS: {
@@ -135,5 +135,10 @@ export const SKILLS: ExperienceSkill = {
       name: "GraphQL",
       logo: "/images/logo/graphql.svg",
       link: "https://graphql.org/",
+    },
+    DatabaseDesign: {
+      name: "Database Design",
+      logo: "/images/logo/database-design.svg",
+      link: "#",
     },
   };

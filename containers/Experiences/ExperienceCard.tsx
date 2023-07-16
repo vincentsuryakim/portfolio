@@ -1,6 +1,6 @@
-import { FC, useEffect, useState, useRef } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
-import { SingularExperienceType } from "@/constants/experience_types";
+import { SingularExperienceType } from "@/constants/experience/types";
 import { firebase } from "@/lib/firebase/firebaseClient";
 import Modal from "@/components/Modal";
 
