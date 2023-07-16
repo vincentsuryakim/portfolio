@@ -37,18 +37,18 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience, i }) => {
 
       {/* Modal */}
       <dialog id={`my_modal_${i}`} className="daisy-modal daisy-modal-bottom sm:daisy-modal-middle">
-        <form method="dialog" className="daisy-modal-box sm:w-11/12 sm:max-w-5xl">
+        <form method="dialog" className="daisy-modal-box sm:w-11/12 sm:max-w-5xl max-h-[-webkit-fill-available] sm:max-h-[calc(100vh-5em)]">
           {experience.images.length > 0 && (
             <div className="mb-7 overflow-x-scroll w-full flex gap-x-4">
               {experience.images?.map((image, i) => (
-                <Image
-                  src={image}
-                  alt={experience.name}
-                  width={560}
-                  height={315}
-                  key={i}
-                  objectFit="cover"
-                />
+                <div key={i} className="relative h-[315px] min-h-[315px] w-[560px] min-w-[560px]">
+                  <Image
+                    src={image}
+                    alt={experience.name}
+                    objectFit="cover"
+                    layout="fill"
+                  />
+                </div>
               ))}
             </div>
           )}

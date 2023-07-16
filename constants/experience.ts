@@ -8,9 +8,7 @@ export const EXPERIENCES: ExperiencesType = {
       logo: "/images/experiences/work/carisaham/logo.png",
       link: "https://carisaham.id/",
 
-      images: [
-        "/images/experiences/work/carisaham/1.png",
-      ],
+      images: [],
 
       history: [
         {
@@ -36,6 +34,7 @@ export const EXPERIENCES: ExperiencesType = {
 
       images: [
         "/images/experiences/work/lncircle/1.png",
+        "/images/experiences/work/lncircle/2.png",
       ],
 
       history: [
@@ -57,9 +56,7 @@ export const EXPERIENCES: ExperiencesType = {
       logo: "/images/experiences/work/ajakgerak/logo.svg",
       link: "https://www.ajakgerak.org/",
 
-      images: [
-        "/images/experiences/work/ajakgerak/1.png",
-      ],
+      images: [],
 
       history: [
         {
@@ -83,6 +80,7 @@ export const EXPERIENCES: ExperiencesType = {
 
       images: [
         "/images/experiences/work/sabilamall/1.png",
+        "/images/experiences/work/sabilamall/2.png",
       ],
 
       history: [
@@ -105,9 +103,7 @@ export const EXPERIENCES: ExperiencesType = {
       headline_role: "Teaching Assistant",
       headline_date: "Feb. 2021 - June. 2023",
 
-      images: [
-        "/images/experiences/work/ui/1.png",
-      ],
+      images: [],
 
       history: [
         {
@@ -172,9 +168,7 @@ export const EXPERIENCES: ExperiencesType = {
       logo: "/images/experiences/projects/url_shortener/logo.svg",
       link: "https://github.com/vincentsuryakim/url-shortener",
 
-      images: [
-        "/images/experiences/projects/url_shortener/1.png",
-      ],
+      images: [],
 
       history: [
         {
@@ -194,9 +188,7 @@ export const EXPERIENCES: ExperiencesType = {
       logo: "/images/experiences/projects/memepedia/logo.svg",
       link: "https://github.com/vincentsuryakim/kesegaran-compfest",
 
-      images: [
-        "/images/experiences/projects/memepedia/1.png",
-      ],
+      images: [],
 
       history: [
         {
@@ -221,6 +213,8 @@ export const EXPERIENCES: ExperiencesType = {
 
       images: [
         "/images/experiences/organizations/ristek/1.png",
+        "/images/experiences/organizations/ristek/2.png",
+        "/images/experiences/organizations/ristek/3.png",
       ],
 
       history: [
@@ -247,6 +241,9 @@ export const EXPERIENCES: ExperiencesType = {
 
       images: [
         "/images/experiences/organizations/compfest/1.png",
+        "/images/experiences/organizations/compfest/2.png",
+        "/images/experiences/organizations/compfest/3.png",
+        "/images/experiences/organizations/compfest/4.png",
       ],
 
       history: [
@@ -282,6 +279,10 @@ export const EXPERIENCES: ExperiencesType = {
 
       images: [
         "/images/experiences/organizations/perak/1.png",
+        "/images/experiences/organizations/perak/2.png",
+        "/images/experiences/organizations/perak/3.png",
+        "/images/experiences/organizations/perak/4.png",
+        "/images/experiences/organizations/perak/5.png",
       ],
 
       history: [
