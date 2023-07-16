@@ -51,8 +51,8 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience, i }) => {
                   <Image
                     src={image}
                     alt={experience.name}
-                    objectFit="cover"
                     loading="lazy"
+                    className="object-cover"
                     fill
                   />
                 </div>
@@ -85,7 +85,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience, i }) => {
                     alt={skill.name}
                     width={24}
                     height={24}
-                    objectFit="contain"
+                    className="object-contain"
                   />
                   <p className="font-medium">{skill.name}</p>
                 </div>

@@ -48,8 +48,7 @@ const GetToKnowMe: FC = () => (
             <Image
               src={`/images/cv/${i}.png`}
               alt={`cv-${i}`}
-              objectFit="cover"
-              className="rounded-xl"
+              className="object-cover rounded-xl"
               fill
             />
           </div>
@@ -62,8 +61,7 @@ const GetToKnowMe: FC = () => (
       <Image
         src="/images/vincent_suryakim.jpeg"
         alt="vincent_suryakim"
-        objectFit="cover"
-        className="rounded-xl"
+        className="object-cover rounded-xl"
         fill
         priority
       />
