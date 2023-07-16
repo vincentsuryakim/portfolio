@@ -60,3 +60,7 @@ body::-webkit-scrollbar {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.modal-open {
+  overflow: hidden;
+}

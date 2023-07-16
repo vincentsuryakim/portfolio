@@ -89,7 +89,7 @@ const Experiences: FC = () => {
         </div>
 
         {mobileTabChangerOpen && (
-          <div className="z-50 font-bold text-sm absolute top-full bg-neutral-100 text-black w-full rounded-2xl mt-1 shadow-2xl">
+          <div className="z-40 font-bold text-sm absolute top-full bg-neutral-100 text-black w-full rounded-2xl mt-1 shadow-2xl">
             <div className="bg-transparent rounded-t-2xl py-3 px-4 flex justify-center" onClick={() => mobileChangeTabs(0)}>
               <p>Work</p>
             </div>
@@ -105,7 +105,7 @@ const Experiences: FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
         {selectedExperience.map((experience: SingularExperienceType, i) => (
-          <ExperienceCard experience={experience} i={i} key={i} />
+          <ExperienceCard experience={experience} key={i} />
         ))}
       </div>
     </div>
