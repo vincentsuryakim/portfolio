@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { SingularExperienceType } from "@/constants/experience_types";
+import { firebase } from "@/lib/firebase/firebaseClient";
 
 interface ExperienceCardProps {
   experience: SingularExperienceType;
@@ -28,7 +29,12 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience, i }) => {
           <div className="mt-5 mb-1 border-t-[1px] border-[#00000033] w-full" />
           <p
             className="text-neutral-700 font-medium underline cursor-pointer w-fit"
-            onClick={() => (window as any)[`my_modal_${i}`].showModal()}
+            onClick={() => {
+              (window as any)[`my_modal_${i}`].showModal();
+              firebase.analytics().logEvent('opened_experience_modal', {
+                experience: experience.name,
+              });
+            }}
           >
             Show more
           </p>

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import { firebase } from "@/lib/firebase/firebaseClient";
 
 const GetToKnowMe: FC = () => (
   <div className="flex gap-x-4 h-[600px]">
@@ -24,7 +25,10 @@ const GetToKnowMe: FC = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="bg-cyan-400 flex gap-x-1 rounded-full text-white font-bold text-sm px-5 py-2">
+            <button
+              className="bg-cyan-400 flex gap-x-1 rounded-full text-white font-bold text-sm px-5 py-2"
+              onClick={() => firebase.analytics().logEvent("opened_cv")}
+            >
               <Image
                 src="/icons/download.svg"
                 alt="download"
