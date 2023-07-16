@@ -41,12 +41,13 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience, i }) => {
           {experience.images.length > 0 && (
             <div className="mb-7 overflow-x-scroll w-full flex gap-x-4">
               {experience.images?.map((image, i) => (
-                <div key={i} className="relative h-[315px] min-h-[315px] w-[560px] min-w-[560px]">
+                <div key={i} className="relative h-[180px] min-h-[180px] w-[320px] min-w-[320px] md:h-[315px] md:min-h-[315px] md:w-[560px] md:min-w-[560px]">
                   <Image
                     src={image}
                     alt={experience.name}
                     objectFit="cover"
-                    layout="fill"
+                    loading="lazy"
+                    fill
                   />
                 </div>
               ))}
