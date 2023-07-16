@@ -54,7 +54,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
       {/* Modal */}
       <Modal isOpen={openModal} onClose={handleCloseModal}>
         {experience.images.length > 0 && (
-          <div className="mb-7 overflow-x-scroll w-full flex gap-x-4">
+          <div className="mb-7 overflow-x-auto w-full flex gap-x-4">
             {experience.images?.map((image, i) => (
               <div key={i} className="relative h-[180px] min-h-[180px] w-[320px] min-w-[320px] md:h-[315px] md:min-h-[315px] md:w-[560px] md:min-w-[560px]">
                 <Image
