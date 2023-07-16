@@ -71,7 +71,7 @@ const Experiences: FC = () => {
 
       <div ref={mobileDropdownRef} className="relative">
         <div
-          className="flex md:hidden justify-center gap-x-2 py-2 px-4 w-full bg-cyan-400 border-4 border-cyan-100 rounded-full cursor-pointer"
+          className="flex md:hidden items-center justify-center gap-x-2 py-2 px-4 w-full bg-cyan-400 border-4 border-cyan-100 rounded-full cursor-pointer"
           onClick={() => setMobileTabChangerOpen(x => !x)}
         >
           <p className="text-white font-bold text-2xl">{
@@ -84,6 +84,7 @@ const Experiences: FC = () => {
             alt="caret-down-fill"
             width={24}
             height={24}
+            className={`${mobileTabChangerOpen && "rotate-180"}`}
           />
         </div>
 
