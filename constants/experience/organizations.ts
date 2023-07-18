@@ -55,8 +55,8 @@ const OrganizationsExperience: SingularExperienceType[] = [
         job_desc: [
           "Led a team of 12 software engineers and 11 UX designers to complete projects from various product owners.",
           "Determined the Minimum Viable Product of various products to further enhance the development cycle.",
-          "Developed the main website using Blitz.js, TailwindCSS, Framer Motion, and Prisma, alongside other software engineers.",
           "Developed all of the supporting websites using Next.js, TailwindCSS, Framer Motion, and Prisma.",
+          "Contributed to the development of the main website using Blitz.js, TailwindCSS, Framer Motion, and Prisma, alongside other software engineers.",
           "Developed a web-based QR Code Scanner for event admission.",
           "Deployed various services using Amazon Web Services.",
         ],
@@ -66,7 +66,7 @@ const OrganizationsExperience: SingularExperienceType[] = [
         date: "Mar. 2021 - Nov. 2021",
         job_desc: [
           "Developed a the main website using Next.js, TypeScript, TailwindCSS, and Framer Motion.",
-          "Developed the business logic and transactional mailing system using Fastify, GraphQL, AWS SES, and many more.",
+          "Developed the business logic for a transactional mailing system using Fastify, GraphQL, AWS SES, and many more.",
           "Designed and developed an email template using Figma and MJML.",
         ],
       },
