@@ -76,6 +76,9 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
             <div key={i}>
               <p className="font-semibold">{history.role}</p>
               <p className="text-neutral-500 mb-1">{history.date}</p>
+              {!!history.description && (
+                <p className="mb-1">{history.description}</p>
+              )}
               <ul className="list-disc list-inside">
                 {history.job_desc?.map((desc, i) => (
                   <li key={i}>{desc}</li>

@@ -11,6 +11,7 @@ export type ExperienceSkill = {
 type ExperienceHistory = {
   role: string;
   date: string;
+  description?: string;
   job_desc: string[];
 };
 

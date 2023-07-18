@@ -140,24 +140,27 @@ const WorkExperience: SingularExperienceType[] = [
 
     history: [
       {
-        role: "Teaching Assistant for Software Engineering in 6th semester.",
+        role: "Teaching Assistant for Software Engineering (CSCM603125) in 6th semester.",
         date: "Jan. 2023 - June. 2023",
+        description: "This course focuses on introducing the cycle of software development, which consists of planning, analysis, design, coding, testing, and maintenance.",
         job_desc: [
           "Directly responsible and assisted 8 students to help them better understand the materials taught in the course.",
           "Gave out weekly/by request sessions.",
         ],
       },
       {
-        role: "Peer Tutor for Databases in 6th semester.",
+        role: "Peer Tutor for Databases (CSGE602070) in 6th semester.",
         date: "Feb. 2023 - June. 2023",
+        description: "This course aims to familiarize students with essential database concepts such as entity-relationship diagrams (ERD), enhanced entity-relationship diagrams (EERD), relational mapping, relational algebra, and SQL (queries, indexing, triggers, procedures, etc).",
         job_desc: [
           "Taught 6 students on a weekly basis.",
           "Gave out weekly/by request sessions.",
         ],
       },
       {
-        role: "Teaching Assistant for Platform-based Programming in 5th semester.",
+        role: "Teaching Assistant for Platform-based Programming (CSGE602022) in 5th semester.",
         date: "Jul. 2022 - Dec. 2022",
+        description: "This course focuses on introducing the fundamentals of web and multi-platform app development, including HTML5, JavaScript, CSS, and modern frameworks such as Django and Flutter.",
         job_desc: [
           "Taught 73 students on a weekly basis.",
           "Directly responsible and assisted 17 students to help them better understand the materials taught in the course.",
@@ -165,8 +168,9 @@ const WorkExperience: SingularExperienceType[] = [
         ],
       },
       {
-        role: "Teaching Assistant for Programming Foundations 2 (OOP) with Java in 4th semester.",
+        role: "Teaching Assistant for Programming Foundations 2 (OOP) with Java (CSGE601021) in 4th semester.",
         date: "Jan. 2022 - June. 2022",
+        description: "This course focuses on introducing the fundamentals of Java Programming, especially about the Object-Oriented Programming (OOP) paradigm.",
         job_desc: [
           "Directly responsible and assisted 15 students to help them better understand the materials taught in the course.",
           "Prepared weekly laboratory assignments and coding assignments for 400+ students.",
@@ -174,8 +178,9 @@ const WorkExperience: SingularExperienceType[] = [
         ],
       },
       {
-        role: "Teaching Assistant for Programming Foundations 1 with Python in 3rd semester.",
+        role: "Teaching Assistant for Programming Foundations 1 with Python (CSGE601020) in 3rd semester.",
         date: "Jul. 2021 - Jan. 2022",
+        description: "This course focuses on introducing the fundamentals of programming such as conditionals, loops, functions, recursions, basic data structures, object-oriented programming, etc.",
         job_desc: [
           "Directly responsible and assisted 10 students to help them better understand the materials taught in the course.",
           "Prepared weekly laboratory assignments and coding assignments for 400+ students.",
@@ -183,8 +188,9 @@ const WorkExperience: SingularExperienceType[] = [
         ],
       },
       {
-        role: "Peer Tutor for Introduction to Digital Systems in 2nd semester.",
+        role: "Peer Tutor for Introduction to Digital Systems (CSCM601150) in 2nd semester.",
         date: "Feb. 2021 - Jun. 2021",
+        description: "This course focuses on introducing the basics of digital systems such as logic gates, combinational circuits, sequential circuits, etc.",
         job_desc: [
           "Taught 3 students privately",
           "Gave out weekly/by request sessions.",
