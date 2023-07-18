@@ -60,7 +60,7 @@ const Modal: FC<ModalProps> = ({ isOpen, children, onClose }) => {
     if (isOpen) {
         return (
             <div ref={overlayRef} onClick={handleOverlayClick}  className={`fixed top-0 left-0 z-50 w-screen ${!isSearchBarOpened ? 'h-[-webkit-fill-available]' : 'h-screen'} bg-[#0000003C]`}>
-                <div className='top-auto bottom-0 sm:top-1/2 sm:bottom-auto left-1/2 transform -translate-x-1/2 translate-y-0 sm:-translate-y-1/2 absolute bg-white overflow-y-auto rounded-t-2xl sm:rounded-b-2xl p-6 w-full sm:w-11/12 sm:max-w-5xl max-h-[90%] sm:max-h-[calc(100vh-5em)]'>
+                <div className="top-auto bottom-0 sm:top-1/2 sm:bottom-auto sm:left-1/2 absolute bg-white overflow-y-auto rounded-t-2xl sm:rounded-b-2xl p-6 w-full sm:w-11/12 sm:max-w-5xl max-h-[90%] sm:max-h-[calc(100vh-5em)] transform animate-slide-in-from-bottom sm:animate-fade-in sm:-translate-x-1/2 sm:-translate-y-1/2">
                     { children }
                 </div>
             </div>
