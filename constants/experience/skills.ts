@@ -27,7 +27,7 @@ export const SKILLS: ExperienceSkill = {
       link: "https://firebase.google.com/",
     },
     GoogleAPI: {
-      name: "GoogleAPI",
+      name: "Google API",
       logo: "/images/logo/google-api.svg",
       link: "https://console.cloud.google.com/",
     },
