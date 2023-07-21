@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { firebase } from "@/lib/firebase/firebaseClient";
+import CurriculumVitaeImage from "./CurriculumVitaeImage";
 
 const LeftSide: FC = () => (
   <div className="bg-neutral-200 w-full lg:w-3/5 rounded-xl py-12 px-8 h-full max-h-full overflow-y-scroll">
@@ -36,19 +37,7 @@ const LeftSide: FC = () => (
       </div>
     </div>
 
-    {/* Curriculum Vitae */}
-    <div className="mt-10 relative bg-neutral-200">
-      {[...Array(3)].map((_, i) => (
-        <div className="mt-2 relative w-full aspect-[17/22]" key={i}>
-          <Image
-            src={`/images/cv/${i}.png`}
-            alt={`cv-${i}`}
-            className="object-cover rounded-xl"
-            fill
-          />
-        </div>
-      ))}
-    </div>
+    <CurriculumVitaeImage />
   </div>
 );
 
