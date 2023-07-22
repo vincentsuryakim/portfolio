@@ -41,6 +41,10 @@
   font-family: 'Satoshi', sans-serif;
 }
 
+html {
+  scrollbar-width: none;  /* Firefox */
+}
+
 body {
   background-color: rgb(245 245 245 / 1);;
   scrollbar-width: none;  /* Firefox */
@@ -49,6 +53,8 @@ body {
 
 body::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
+  width: 0;
+  height: 0;
 }
 
 .text-gradient-1 {
@@ -67,4 +73,11 @@ body::-webkit-scrollbar {
 
 .modal-open {
   overflow: hidden;
+}
+
+.modal-overlay-height {
+  height: 100vh;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: stretch;
 }
