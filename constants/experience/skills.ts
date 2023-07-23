@@ -2,7 +2,7 @@ import { ExperienceSkill } from "./types";
 
 export const SKILLS: ExperienceSkill = {
     NextJS: {
-      name: "NextJS",
+      name: "Next.js",
       logo: "/images/logo/nextjs.png",
       link: "https://nextjs.org/",
     },

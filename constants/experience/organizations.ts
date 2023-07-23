@@ -57,7 +57,7 @@ const OrganizationsExperience: SingularExperienceType[] = [
           "Determined the Minimum Viable Product of various products to further enhance the development cycle.",
           "Developed all of the supporting websites using Next.js, TailwindCSS, Framer Motion, and Prisma.",
           "Contributed to the development of the main website using Blitz.js, TailwindCSS, Framer Motion, and Prisma, alongside other software engineers.",
-          "Developed a web-based QR Code Scanner for event admission.",
+          "Developed a web-based QR Code Scanner for event admission using Next.js, Chakra UI, and Django REST Framework.",
           "Deployed various services using Amazon Web Services.",
         ],
       },
