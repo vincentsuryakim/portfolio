@@ -4,7 +4,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css"
 import "react-pdf/dist/esm/Page/TextLayer.css"
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`;
 
 const CurriculumVitaeImage: FC = () => {
     const [numPages, setNumPages] = useState<number | null>(null);
@@ -19,7 +19,7 @@ const CurriculumVitaeImage: FC = () => {
         const handleResize = () => {
             const clientWidth = pdfPageRef.current ? pdfPageRef.current.clientWidth : undefined;
             if (clientWidth !== undefined) {
-                setWidth(pdfPageRef.current ? pdfPageRef.current.clientWidth : undefined);
+                setWidth(clientWidth);
             } else {
                 setTimeout(handleResize, 100)
             }

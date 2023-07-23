@@ -65,7 +65,7 @@ const OrganizationsExperience: SingularExperienceType[] = [
         role: "Software Engineer",
         date: "Mar. 2021 - Nov. 2021",
         job_desc: [
-          "Developed a the main website using Next.js, TypeScript, TailwindCSS, and Framer Motion.",
+          "Developed the main website using Next.js, TypeScript, TailwindCSS, and Framer Motion.",
           "Developed the business logic for a transactional mailing system using Fastify, GraphQL, AWS SES, and many more.",
           "Designed and developed an email template using Figma and MJML.",
         ],

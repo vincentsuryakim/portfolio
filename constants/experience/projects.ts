@@ -33,8 +33,8 @@ const ProjectsExperience: SingularExperienceType[] = [
       {
         role: "Software Engineer",
         date: "Mar. 2021",
+        description: "Recruitment task for COMPFEST13's Software Engineering Team.",
         job_desc: [
-          "Recruitment task for COMPFEST13's Software Engineering Team.",
           "Developed a search engine for memes.",
           "Memes can be saved in the web browser using LocalStorage.",
         ],
