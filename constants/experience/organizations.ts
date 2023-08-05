@@ -46,6 +46,7 @@ const OrganizationsExperience: SingularExperienceType[] = [
       "/images/experiences/organizations/compfest/2.png",
       "/images/experiences/organizations/compfest/3.png",
       "/images/experiences/organizations/compfest/4.png",
+      "/images/experiences/organizations/compfest/5.png",
     ],
 
     history: [
