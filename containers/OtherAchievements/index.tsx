@@ -60,7 +60,7 @@ const OtherAchievements: FC = () => {
                             height={16}
                         />
                     </a>
-                    <p>{i.number} &#183; {i.date}</p>
+                    <p>{i.number} &#183; Issued {i.date}</p>
                 </div>
             ))}
         </div>
