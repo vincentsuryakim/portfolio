@@ -4,6 +4,7 @@ import Layout from "@/components/Layout"
 import Hero from "@/containers/Hero"
 import GetToKnowMe from "@/containers/GetToKnowMe"
 import Experiences from "@/containers/Experiences"
+import OtherAchievements from "@/containers/OtherAchievements"
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
       <Hero />
       <GetToKnowMe />
       <Experiences />
+      <OtherAchievements />
     </Layout>
   )
 }

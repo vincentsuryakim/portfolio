@@ -1,12 +1,4 @@
-type ExperienceSkillObject = {
-    name: string;
-    logo: string;
-    link: string;
-}
-
-export type ExperienceSkill = {
-  [key: string]: ExperienceSkillObject
-};
+import { SkillTypeObject } from "@/constants/skill/types";
 
 type ExperienceHistory = {
   role: string;
@@ -23,7 +15,7 @@ export type SingularExperienceType = {
   headline_date?: string;
   images: string[];
   history: ExperienceHistory[];
-  skills: ExperienceSkillObject[];
+  skills: SkillTypeObject[];
 };
 
 export type ExperiencesType = {

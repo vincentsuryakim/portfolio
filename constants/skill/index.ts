@@ -1,6 +1,6 @@
-import { ExperienceSkill } from "./types";
+import { SkillType } from "./types";
 
-export const SKILLS: ExperienceSkill = {
+export const SKILLS: SkillType = {
     NextJS: {
       name: "Next.js",
       logo: "/images/logo/nextjs.png",
@@ -106,21 +106,6 @@ export const SKILLS: ExperienceSkill = {
       logo: "/images/logo/gcp.svg",
       link: "https://console.cloud.google.com",
     },
-    Leadership: {
-      name: "Leadership",
-      logo: "/images/logo/leadership.svg",
-      link: "#",
-    },
-    DecisionMaking: {
-      name: "Decision Making",
-      logo: "/images/logo/decision-making.svg",
-      link: "#",
-    },
-    Communication: {
-      name: "Communication",
-      logo: "/images/logo/communication.svg",
-      link: "#",
-    },
     BlitzJS: {
       name: "BlitzJS",
       logo: "/images/logo/blitzjs.png",
@@ -139,6 +124,21 @@ export const SKILLS: ExperienceSkill = {
     DatabaseDesign: {
       name: "Database Design",
       logo: "/images/logo/database-design.svg",
+      link: "#",
+    },
+    Leadership: {
+      name: "Leadership",
+      logo: "/images/logo/leadership.svg",
+      link: "#",
+    },
+    DecisionMaking: {
+      name: "Decision Making",
+      logo: "/images/logo/decision-making.svg",
+      link: "#",
+    },
+    Communication: {
+      name: "Communication",
+      logo: "/images/logo/communication.svg",
       link: "#",
     },
   };

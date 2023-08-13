@@ -1,5 +1,5 @@
 import { SingularExperienceType } from "./types";
-import { SKILLS } from "./skills";
+import { SKILLS } from "@/constants/skill";
 
 const WorkExperience: SingularExperienceType[] = [
   {
@@ -135,14 +135,14 @@ const WorkExperience: SingularExperienceType[] = [
     logo: "/images/experiences/work/ui/logo.png",
     link: "https://cs.ui.ac.id/",
     headline_role: "Teaching Assistant",
-    headline_date: "Feb. 2021 - June. 2023",
+    headline_date: "Feb. 2021 - Jun. 2023",
 
     images: [],
 
     history: [
       {
         role: "Teaching Assistant for Software Engineering (CSCM603125) in 6th semester.",
-        date: "Jan. 2023 - June. 2023",
+        date: "Jan. 2023 - Jun. 2023",
         description: "This course focuses on introducing the cycle of software development, which consists of planning, analysis, design, coding, testing, and maintenance.",
         job_desc: [
           "Directly responsible and assisted 8 students to help them better understand the materials taught in the course.",
@@ -151,7 +151,7 @@ const WorkExperience: SingularExperienceType[] = [
       },
       {
         role: "Peer Tutor for Databases (CSGE602070) in 6th semester.",
-        date: "Feb. 2023 - June. 2023",
+        date: "Feb. 2023 - Jun. 2023",
         description: "This course aims to familiarize students with essential database concepts such as entity-relationship diagrams (ERD), enhanced entity-relationship diagrams (EERD), relational mapping, relational algebra, and SQL (queries, indexing, triggers, procedures, etc).",
         job_desc: [
           "Taught 6 students on a weekly basis.",
@@ -170,7 +170,7 @@ const WorkExperience: SingularExperienceType[] = [
       },
       {
         role: "Teaching Assistant for Programming Foundations 2 (OOP) with Java (CSGE601021) in 4th semester.",
-        date: "Jan. 2022 - June. 2022",
+        date: "Jan. 2022 - Jun. 2022",
         description: "This course focuses on introducing the fundamentals of Java Programming, especially about the Object-Oriented Programming (OOP) paradigm.",
         job_desc: [
           "Directly responsible and assisted 15 students to help them better understand the materials taught in the course.",
