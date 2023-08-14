@@ -37,36 +37,19 @@ const Experiences: FC = () => {
   return (
     <div>
       <div className="hidden md:flex w-full bg-neutral-200 rounded-full">
-        <div
-          className={`w-1/3 border-4 ${
-            experienceTabs === 0
-              ? "bg-cyan-400 border-[#FFFFFF7F] text-white"
-              : "text-neutral-500 border-transparent"
-          } rounded-full py-2 px-4 flex justify-center cursor-pointer`}
-          onClick={() => setExperienceTabs(0)}
-        >
-          <p className="font-bold text-2xl">Work</p>
-        </div>
-        <div
-          className={`w-1/3 border-4 ${
-            experienceTabs === 1
-              ? "bg-cyan-400 border-[#FFFFFF7F] text-white"
-              : "text-neutral-500 border-transparent"
-          } rounded-full py-2 px-4 flex justify-center cursor-pointer`}
-          onClick={() => setExperienceTabs(1)}
-        >
-          <p className="font-bold text-2xl">Projects</p>
-        </div>
-        <div
-          className={`w-1/3 border-4 ${
-            experienceTabs === 2
-              ? "bg-cyan-400 border-[#FFFFFF7F] text-white"
-              : "text-neutral-500 border-transparent"
-          } rounded-full py-2 px-4 flex justify-center cursor-pointer`}
-          onClick={() => setExperienceTabs(2)}
-        >
-          <p className="font-bold text-2xl">Organizations</p>
-        </div>
+        {['Work', 'Projects', 'Organizations'].map((tab, idx) => (
+          <div
+            key={idx}
+            className={`w-1/3 border-4 ${
+              experienceTabs === idx
+                ? "bg-cyan-400 border-[#FFFFFF7F] text-white"
+                : "text-neutral-500 border-transparent"
+            } rounded-full py-2 px-4 flex justify-center cursor-pointer`}
+            onClick={() => setExperienceTabs(idx)}
+          >
+            <p className="font-bold text-2xl">{tab}</p>
+          </div>
+        ))}
       </div>
 
       <div ref={mobileDropdownRef} className="relative">
