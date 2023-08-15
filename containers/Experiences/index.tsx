@@ -1,93 +1,30 @@
-import { FC, useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { FC, useState } from "react";
 
-import { EXPERIENCES } from "@/constants/experience"
-import { ExperiencesType, SingularExperienceType } from "@/constants/experience/types"
+import { EXPERIENCES } from "@/constants/experience";
+import { ExperiencesType, SingularExperienceType } from "@/constants/experience/types";
 import ExperienceCard from "./ExperienceCard";
+import Tab from "@/components/Tab";
 
 const Experiences: FC = () => {
-  const [experienceTabs, setExperienceTabs] = useState<number>(0);
-  const [mobileTabChangerOpen, setMobileTabChangerOpen] = useState<boolean>(false);
+  const experienceKeys: (keyof ExperiencesType)[] = ['Work', 'Projects', 'Organizations']
 
-  const experienceKeys: (keyof ExperiencesType)[] = Object.keys(
-    EXPERIENCES
-  ) as (keyof ExperiencesType)[];
-  const selectedExperience: SingularExperienceType[] =
-    EXPERIENCES[experienceKeys[experienceTabs]];
-  
-  const mobileChangeTabs = (index: number) => {
-    setExperienceTabs(index);
-    setMobileTabChangerOpen(false);
-  }
-
-  const mobileDropdownRef = useRef<HTMLDivElement>(null);
-  const handleClickOutside = (event: MouseEvent) => {
-    if (mobileDropdownRef.current && !mobileDropdownRef.current.contains(event.target as Node)) {
-      setMobileTabChangerOpen(false);
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
-    return () =>{
-      document.removeEventListener('click', handleClickOutside, true);
-    }
-  }, [])
+  const [selectedExperience, setSelectedExperience] = useState<keyof ExperiencesType>(experienceKeys[0]);
+  const selectedExperienceData: SingularExperienceType[] = EXPERIENCES[selectedExperience];
 
   return (
     <div>
-      <div className="hidden md:flex w-full bg-neutral-200 rounded-full">
-        {['Work', 'Projects', 'Organizations'].map((tab, idx) => (
-          <div
-            key={idx}
-            className={`w-1/3 border-4 ${
-              experienceTabs === idx
-                ? "bg-cyan-400 border-[#FFFFFF7F] text-white"
-                : "text-neutral-500 border-transparent"
-            } rounded-full py-2 px-4 flex justify-center cursor-pointer`}
-            onClick={() => setExperienceTabs(idx)}
-          >
-            <p className="font-bold text-2xl">{tab}</p>
-          </div>
-        ))}
-      </div>
-
-      <div ref={mobileDropdownRef} className="relative">
-        <div
-          className="flex md:hidden items-center justify-center gap-x-2 py-2 px-4 w-full bg-cyan-400 border-4 border-cyan-100 rounded-full cursor-pointer"
-          onClick={() => setMobileTabChangerOpen(x => !x)}
-        >
-          <p className="text-white font-bold text-2xl">{
-            experienceTabs === 0 ? "Work" :
-            experienceTabs === 1 ? "Projects" :
-            "Organizations"
-          }</p>
-          <Image
-            src="/icons/caret-down-fill.svg"
-            alt="caret-down-fill"
-            width={24}
-            height={24}
-            className={`${mobileTabChangerOpen && "rotate-180"}`}
-          />
-        </div>
-
-        {mobileTabChangerOpen && (
-          <div className="z-40 font-bold text-sm absolute top-full bg-neutral-100 text-black w-full rounded-2xl mt-1 shadow-2xl">
-            <div className="bg-transparent rounded-t-2xl py-3 px-4 flex justify-center" onClick={() => mobileChangeTabs(0)}>
-              <p>Work</p>
-            </div>
-            <div className="bg-transparent py-3 px-4 flex justify-center" onClick={() => mobileChangeTabs(1)}>
-              <p>Projects</p>
-            </div>
-            <div className="bg-transparent rounded-b-2xl py-3 px-4 flex justify-center" onClick={() => mobileChangeTabs(2)}>
-              <p>Organizations</p>
-            </div>
-          </div>
-        )}
-      </div>
+      <Tab
+        tabs={experienceKeys}
+        selectedTab={selectedExperience}
+        setSelectedTab={(tab: string) => {
+          if (experienceKeys.includes(tab as keyof ExperiencesType)) {
+            setSelectedExperience(tab as keyof ExperiencesType);
+          }
+        }}
+      />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-        {selectedExperience.map((experience: SingularExperienceType, i) => (
+        {selectedExperienceData.map((experience: SingularExperienceType, i) => (
           <ExperienceCard experience={experience} key={i} />
         ))}
       </div>
